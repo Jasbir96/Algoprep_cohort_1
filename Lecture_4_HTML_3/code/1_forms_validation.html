@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    input:valid {
+        border: 2px solid green;
+    }
+
+    input:invalid {
+        border: 5px solid red;
+    }
+</style>
+
+<body>
+    <!-- valid , invalid basic example-->
+    <!-- <form>
+        <label for="email">Email: </label>
+        <input type="email" id="email">
+        <br>
+        <br>
+        <button type="submit">Submit</button>
+    </form> -->
+    <!-- patterns -->
+    <!-- regular expression -->
+    <!-- credit card-->
+
+
+    <!-- - **Character Classes**: Define a set of characters.
+     -[abc] 
+    - `[a-z]`: Matches any one lowercase letter from a to z.
+    - `[A-Z]`: Matches any one uppercase letter from A to Z.
+    - `[0-9]`: Matches any one digit from 0 to 9. -->
+    <!-- \d{length}-> 
+     compares only digit and shoudl equal to the length -->
+    <form>
+        <label for="creditcard">Credit card: </label>
+        <input id="creditcard" type="text" pattern="\d{16}">
+        <br>
+        <br>
+        <label for="date">Date :</label>
+        <input type="date" id="date">
+        <br>
+        <br>
+        <!-- dd-mm-yyyy -->
+        <label for="datetext">Date :</label>
+        <input type="text" id="datetext" pattern="\d{2}-\d{2}-\d{4}">
+        <br>
+        <br>
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" pattern="[+][9][1]\d{10}">
+        <br>
+        <br>
+        <label for="url">URL:</label>
+        <input type="url" id="url">
+        <br>
+        <br>
+        <label for="texturl">My URL:</label>
+        <input type="text" id="texturl" pattern="https?://.+">
+
+
+
+
+    </form>
+</body>
+
+</html>
