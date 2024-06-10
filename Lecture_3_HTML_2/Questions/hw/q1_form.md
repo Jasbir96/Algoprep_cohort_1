@@ -6,7 +6,7 @@ Create a simple HTML form to collect various types of user information. This for
 
 1. **Create a form** with the following input fields and labels:
     
-    - **Date**: Date input
+    - **Date**: Date **input**
     - **Time**: Time input
     - **Favorite Color**: Color input
     - **Profile Picture**: File input
