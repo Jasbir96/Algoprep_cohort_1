@@ -60,11 +60,11 @@ fn();
 //     console.log("Hello i am fuunction");
 // }
 
-// // const newFNVar=refFunction;
+const newFNVar=refFunction;
 
-// // newFNVar();
+// newFNVar();
 // // console.log("`````````````````");
-// // refFunction();
+// refFunction();
 
 
 
