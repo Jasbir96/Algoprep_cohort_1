@@ -17,11 +17,11 @@
  * **/ 
 // Ques-2 
 //1
-// console.log("Before");
-// setTimeout(fn, 2000);
-// // //2
-// function fn() {
-//     console.log("I am fn");
-// }
-// //3
-// console.log("After");
+console.log("Before");
+setTimeout(fn, 5000);
+// //2
+function fn() {
+    console.log("I am fn");
+}
+//3
+console.log("After");
