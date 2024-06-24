@@ -1,0 +1,35 @@
+body {
+    font-family: sans-serif;
+}
+
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+h3 {
+    text-align: center;
+}
+
+.todo {
+    width: 400px;
+    margin: auto;
+    border: 2px solid gray;
+    height: 500px;
+}
+
+.input-area {
+    margin: auto;
+    width: 300px;
+    height: 60px;
+    margin-top: 30px;
+}
+
+.list {
+    width: 300px;
+    border: 2px solid gray;
+    height: 300px;
+    margin: auto;
+
+}
