@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 
+    uheight : 
+    uwidth :
+        next element  ->
+        padding ->
+        margin : 
+        border :
+        
+        */
+        .block {
+            /* height -> apply, 
+            width -> apply,
+             p
+             ,m
+             ,border
+              */
+            background-color: lightblue;
+            /* userdefined height :works */
+            height: 100px;
+            /* userdefined width :works */
+            width: 100px;
+            /* next Element -> next line */
+            /* padding  -> in all directions*/
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+
+            /* margin -> in all directions */
+            margin-top: 40px;
+            margin-left: 20px;
+            /* border */
+            border-top: 2px solid red;
+            border-left: 2px solid red;
+
+        }
+
+
+
+        .inline {
+            background-color: lightgreen;
+            /* userdefined height :not work */
+            height: 100px;
+
+            /* userdefined width :not works */
+            width: 200px;
+            display: inline;
+
+            /* padding -> i all direction*/
+            padding-left: 10px;
+            padding-top: 10px;
+            /* border -> in all direction */
+            border-top: 5px solid red;
+            border-left: 5px solid red;
+
+            /* margin  -> only works horizonatlly*/
+            margin-left: 10px;
+            margin-top: 10px;
+            /* next element -> same line me aa jata */
+        }
+
+        .inline_block {
+            background-color: mediumorchid;
+            display: inline-block;
+            height: 100px;
+            /* userdefined width :works */
+            width: 100px;
+            /* userdefined width :works */
+            height: 100px;
+            /* margin-right: -4px; */
+            /* padding-top: 10px; */
+            /* padding-bottom: 10px; */
+            /* padding-left: 10px; */
+            /* padding-right: 10px; */
+            /* margin  */
+            /* margin-top: 10px; */
+            /* margin-left: 20px; */
+            /* border */
+            /* border-top: 2px solid red; */
+            /* border-left: 2px solid red; */
+
+
+
+
+
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- block level element  -->
+    <h2>hello from h2</h2>
+    <!-- <div class="block">Hello Hi how are you</div> -->
+    <!-- inline element -> style a part of a line -->
+    <!-- <div class="inline">I am inline</div> -->
+    <!-- <div class="inline">I am inline</div> -->
+    <!--  inline block -->
+    <div class="inline_block">I am inline block</div>
+    <div class="inline_block">I am inline block</div>
+</body>
+
+</html>
