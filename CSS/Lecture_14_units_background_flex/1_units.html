@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    html {
+        font-family: sans-serif;
+    }
+
+    h2,
+    h3 {
+        color: lightcoral;
+        text-align: center;
+    }
+
+    h3 {
+        color: lightgreen
+    }
+
+    /* absolute unit 
+     * they go as it is in the browser
+    */
+    .px {
+        height: 200px;
+        width: 200px;
+        background-color: purple;
+        color: white;
+        font-size: 20px;
+    }
+
+    /* relative unit-> it is a relative unit that
+    depends on some parameter and are  converted into
+    absolute unit
+    1rem =font-size of html tag
+    usually font-size of html tag is 16px 
+    */
+    /* html {
+        font-size: 20px;
+    }
+
+    .rem {
+        font-size: 2rem;
+        height: 10rem;
+        width: 20rem;
+        background-color: lightblue;
+        margin: 1rem;
+    }
+
+    .rem2 {
+
+        font-size: 1rem;
+        height: 10rem;
+        width: 10rem;
+        background-color: lightgreen;
+        margin: 0.5rem;
+    } */
+
+    /* 100vh=browser current window-height */
+    /* 100vw=browser current window-width */
+    .vh-vw {
+        /* height: 200px; */
+        margin-top: 10px;
+        background-color: lightcoral;
+        width: 50vw;
+        height: 20vh;
+    }
+
+    .gp {
+        margin-top:10px;
+        height: 300px;
+        width: 300px;
+        background-color: lightgreen;
+    }
+    .parent{
+        height: 50%;
+        width:100%;
+        background-color: burlywood;
+    }
+    .child{
+        width:50%;
+        height: 100%;
+        background-color: yellowgreen;
+    }
+    
+</style>
+
+<body>
+    <h2>Units examples</h2>
+    <h3>Absolute</h3>
+
+    <div class="px">Pixel Element</div>
+    <!-- <div class="rem">REM unit</div> -->
+    <!-- <div class="rem2">REM unit</div> -->
+
+    <!-- <div class="vh-vw">VH - VW unit</div> -->
+    <!-- percentage -->
+    <div class="gp">
+        <div class="parent">
+            <div class="child"> percentage </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
