@@ -12,11 +12,23 @@
 
         .parent {
             height: 30rem;
-            width: 32rem;
+            width: 40rem;
             background-color: rebeccapurple;
+            /* layout ke feature */
             display: flex;
+            /* flex-direction:column; */
+            /* horizontally */
+            /* justify-content: flex-start; */
+            /* justify-content: center; */
+            /* justify-content: end; */
+            /* justify-content: space-evenly; */
+            /* justify-content: space-between; */
+            /* justify-content: space-around; */
+            /* align items */
+            align-items: center;
+            /* align-items: flex-start; */
+            /* align-items: flex-end; */
         }
-
         .child {
             color: rgb(179, 40, 40);
             font-size: 2rem;
@@ -25,8 +37,16 @@
             border: 1px solid green;
             font-family: sans-serif;
             height: 100px;
-            width:100px;
+            width: 100px;
         }
+        .one{
+        align-self: flex-start;
+        }
+
+        .two{
+            align-self: flex-end;
+        }
+
     </style>
 </head>
 
@@ -35,7 +55,7 @@
 </body>
 <h2>Flexbox Example</h2>
 <div class="parent">
-    <div class="child one"> child  </div>
+    <div class="child one"> child </div>
     <div class="child two ">child</div>
     <div class="child three"> child</div>
 </div>
