@@ -16,3 +16,7 @@ List of inline and block elements : https://htmlreference.io/
 * Lec-13 : Box model , Box-sizing and display : https://www.freecodecamp.org/learn/2022/responsive-web-design/learn-the-css-box-model-by-building-a-rothko-painting/step-1 
 * Lecture -14 : https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-css-flexbox-by-building-a-photo-gallery
 
+
+
+## tools
+https://fonts.google.com/

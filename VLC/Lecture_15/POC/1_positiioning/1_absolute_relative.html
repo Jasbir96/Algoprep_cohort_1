@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+    }
+
+    h2 {
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .parent {
+        margin-left: 1rem;
+        background-color: rgb(146, 85, 202);
+        width: 90vw;
+        position: relative;
+
+    }
+
+    .box {
+        width: 10rem;
+        height: 10rem;
+        margin-bottom: 1rem;
+        border: dashed;
+    }
+
+    .box-1 {
+        background-color: lightblue;
+    }
+
+    .box-2 {
+        background-color: lightcoral;
+        /*
+        * you move wrt to your original position 
+        * you occupy your location even if you are 
+        some where else
+        */
+        /* position: relative; */
+        /* right side  */
+        /* left:200px; */
+        /* bottom side  */
+        /* top:100px; */
+    }
+    .box-3 {
+        /*
+        *  
+        * you don't occupy your location even if you are 
+        some where else
+        */
+        background-color: lightgreen;
+        position: absolute;
+        left:100px;
+        top:10px;
+    }
+
+    .box-4 {
+        background-color: lightsalmon;
+    }
+</style>
+
+<body>
+    <h2>Position - Absolute, Relative </h2>
+
+    <div class="parent">
+        <div class="box box-1">1</div>
+        <div class="box box-2">2</div>
+        <div class="box box-3">3</div>
+        <div class="box box-4">4</div>
+      
+    </div>
+</body>
+
+</html>

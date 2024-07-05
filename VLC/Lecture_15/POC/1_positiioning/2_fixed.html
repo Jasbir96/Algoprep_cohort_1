@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed value</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .parent {
+            margin-left: 1rem;
+            width: 70vh;
+            background-color: rgb(146, 85, 202);
+
+        }
+
+        .box {
+            width: 10rem;
+            height: 10rem;
+            margin-bottom: 1rem;
+            border: dashed;
+        }
+
+        .box-1 {
+            background-color: lightblue;
+        }
+
+        .box-2 {
+
+            background-color: lightcoral;
+        }
+
+        .box-3 {
+            background-color: lightgreen;
+        }
+
+        .box-4 {
+            background-color: lightsalmon;
+        }
+
+        /* template starts from here */
+        li {
+            color: white;
+        }
+
+        /* display ->  */
+        nav {
+            background-color: black;
+            /* it is fixed on the
+            view port  -> like absolute next elem is going
+            take your place */
+            position: fixed;
+            /* always give width*/
+            width: 100%;
+            /* takes top and left from origin of the page */
+            top: 0px;
+            left: 90vw;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Position:Fixed</h2>
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Signup</li>
+        </ul>
+    </nav>
+    <div class="parent">
+
+        <div class="box box-1">1</div>
+        <div class="box box-2">2</div>
+        <div class="box box-3">3</div>
+        <div class="box box-4">4</div>
+    </div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem rerum cumque necessitatibus tempora nihil sit
+        placeat quisquam voluptatibus, sunt voluptates architecto in nisi porro atque reiciendis distinctio esse. Minima
+        ad ratione, praesentium sunt doloribus dolore eum quo voluptatem corrupti culpa, obcaecati tempora quos. Fugit
+        sed reprehenderit culpa illum, corrupti aliquam vero adipisci dolorum! Asperiores laborum, ullam omnis tenetur
+        temporibus nihil cumque, possimus ut tempora voluptas doloribus, id ipsam? Error rem adipisci nostrum natus
+        aspernatur expedita eos numquam inventore aliquid molestiae neque distinctio, architecto, eveniet voluptatum
+        nisi iste eligendi ut repellat officia maxime at, praesentium deserunt aliquam facere. Aspernatur beatae quam
+        accusantium minus fuga totam! Quis, earum unde tempore, fugit ipsa in laboriosam vel alias iste voluptatibus
+        fugiat rerum voluptatum odit. A error neque maxime sequi veniam impedit cupiditate saepe voluptatem dolor quis
+        exercitationem perferendis, incidunt atque beatae. Vel dolore asperiores perspiciatis quaerat possimus eligendi
+        molestiae dignissimos libero ut repellendus officia exercitationem placeat natus fugiat nesciunt, consequatur
+        temporibus sed dolores officiis? Deleniti itaque, exercitationem fuga odit repudiandae necessitatibus quaerat
+        hic corrupti fugiat. Reprehenderit illo, sunt sed quibusdam delectus adipisci nobis ad corrupti blanditiis,
+        error sapiente. Nesciunt vitae ipsa at quia eveniet commodi dolores iusto aliquid aut eum perspiciatis
+        necessitatibus quidem minus labore, in quae quos quaerat? Harum ex accusamus ullam dolorum, ea aliquid
+        voluptatum distinctio, ad nam odit reprehenderit voluptates? Aperiam asperiores repellat ratione iusto quis.
+        Ipsa repudiandae neque repellendus commodi fugit consectetur molestiae. Cupiditate, id? Cum quam aperiam at vel
+        labore pariatur neque voluptatibus quae ipsam inventore ipsa beatae libero suscipit nihil perferendis corporis
+        quidem rerum, similique doloribus et eum quis commodi? Fugiat officia explicabo voluptatibus excepturi sapiente
+        quisquam tempore voluptatum molestiae ipsum asperiores praesentium placeat eos odit ullam obcaecati odio
+        corrupti eveniet, perferendis reiciendis error officiis atque temporibus harum hic! Vel mollitia voluptatem ex
+        nulla beatae. Magni, vel sunt.</p>
+</body>
+
+</html>
+
+
+
+<!-- /* it is fixed on the
+view port -> like absolute next elem is going
+take your place */ -->
+<!-- /* always give width*/ -->
+<!-- /* takes top and left from origin of the page */ -->
