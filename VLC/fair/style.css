@@ -42,18 +42,30 @@ header {
 
 .menu {
     position: relative;
-
 }
+
+.menu:hover {
+    background-color: lightblue;
+}
+
 .menu-items {
     background-color: rgb(238, 238, 238);
     position: absolute;
-    top: 14px;
-    width:9rem;
+    top: 1px;
+    width: 9rem;
+    display: none;
+}
 
+.menu:hover .menu-items {
+    display: block;
 }
 
 li {
     padding: 0.25rem;
+}
+
+.videoInput {
+    display: none;
 }
 
 /* main element */

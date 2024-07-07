@@ -19,23 +19,21 @@
         </div>
         <div class="menu-bar">
             <div class="menu">
-                <div class="menu-btn">Open</div>
-                <!-- button click -> file get
-                 
-                -->
+                <div class="menu-btn"  id="videoBtn">Open</div>
+                <input type="file" class="videoInput" id="videoInput">
             </div>
             <div class="menu">
                 <div class="menu-btn">Playback</div>
-                <!-- <ul class="menu-items">
-                    <li>SpeedUp</li>
-                    <li>SpeedDown</li>
-                </ul> -->
+                <ul class="menu-items">
+                    <li id="speedUp">SpeedUp</li>
+                    <li id="speedDown">SpeedDown</li>
+                </ul>
             </div>
             <div class="menu">
-                <div class="menu">Audio</div>
+                <div class="menu-btn">Audio</div>
                 <ul class="menu-items">
-                    <li>Volume Up</li>
-                    <li>Volume Down</li>
+                    <li id="volumeUp">Volume Up</li>
+                    <li id="volumeDown">Volume Down</li>
                 </ul>
 
             </div>
@@ -44,5 +42,7 @@
     <main></main>
     <footer></footer>
 </body>
+
+<script src="script.js"></script>
 
 </html>
