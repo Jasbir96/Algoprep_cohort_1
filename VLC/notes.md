@@ -14,5 +14,14 @@
 * How can you use browser to play the user provided
 * Volume , speed  manipulation
 * references -> video , audio 
+
+/****
+ * files -> data -> jpg/png -> 0,1 , -> image viewer
+ * video-> .mp4, flv , mkv -> vlc
+ * doc -> .docx -> word , .pdf -> pdf reader
+ * excel -> xlsx 
+ * Data -> BASE64 -> 2^64
+ * data:image/jpeg;base64
+ * **/ 
 ## Pending 
 * sticky,z-index
