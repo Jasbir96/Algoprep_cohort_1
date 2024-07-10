@@ -27,6 +27,9 @@ const acceptInputHandler = (obj) => {
     videoElement.volume = 0.3;
     // how to inc/dec the volume of a video in js 
     // how to inc/dec speed of a video in js 
+    videoElement.addEventListener("loadedmetadata",function(){
+        // your time will there
+    })
 }
 
 videoBtn.addEventListener("click", handleInput);
@@ -126,5 +129,10 @@ volumeUp.addEventListener("click", volumeUpHandler);
 volumeDown.addEventListener("click", volumeDownHandler);
 
 
+/***********controls******************/
+const handleFullScreen = () => {
+    videoPlayer.requestFullscreen();
+}
 
-
+const fullScreenElem = document.querySelector("#fullScreen");
+fullScreenElem.addEventListener("click",handleFullScreen)
