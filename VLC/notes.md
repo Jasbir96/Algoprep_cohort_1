@@ -25,8 +25,8 @@
  * **/ 
 
 ## Agenda : VLC-3
-* Volume and speed manipulation
-* showing messages -> Toast
+* Volume and speed manipulation [*]
+* showing messages -> Toast [*]
 * controls -> working
 * Deploy github
 

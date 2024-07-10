@@ -86,3 +86,12 @@ main {
 footer {
     height: 3rem;
 }
+
+.toast {
+    color: white;
+    font-size: 2rem;
+    position: fixed;
+    top: 99px;
+    right: 47px;
+    display: none;
+}

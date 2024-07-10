@@ -39,6 +39,7 @@ const speedUp = document.querySelector("#speedUp");
 const speedDown = document.querySelector("#speedDown");
 const volumeUp = document.querySelector("#volumeUp");
 const volumeDown = document.querySelector("#volumeDown");
+const toast = document.querySelector(".toast");
 
 const speedUpHandler = () => {
     // * where is the video-> 
@@ -53,6 +54,9 @@ const speedUpHandler = () => {
     // video -> speed increase
     const increaseSpeed = videoElement.playbackRate + 0.5;
     videoElement.playbackRate = increaseSpeed;
+
+    showToast(increaseSpeed + "X");
+
     // which property you will use to increase it's speed 
     // * how much you want to increase
 }
@@ -66,8 +70,8 @@ const speedDownhandler = () => {
         const decreasedSpeed = videoElement.playbackRate - 0.5;
         videoElement.playbackRate = decreasedSpeed;
         console.log("decreased speed", decreasedSpeed)
+        showToast(decreasedSpeed + "X");
     }
-
 }
 
 const volumeUpHandler = () => {
@@ -80,11 +84,12 @@ const volumeUpHandler = () => {
     if (videoElement.volume >= 0.99) {
         return;
     }
-    videoElement.volume = videoElement.volume + 0.1;
-    console.log("increseas volume", videoElement.volume);
-
+    const increasedVolume = videoElement.volume + 0.1
+    videoElement.volume = increasedVolume;
+    // console.log("increseas volume", increasedVolume);
+    const percentage = (increasedVolume * 100) + "%";
+    showToast(percentage)
 }
-
 
 const volumeDownHandler = () => {
     // select the video
@@ -93,13 +98,27 @@ const volumeDownHandler = () => {
         return;
     }
     // property to play with volume 
-    if (videoElement.volume<= 0.1) {
-        videoElement.volume=0;
-       return
+    if (videoElement.volume <= 0.1) {
+        videoElement.volume = 0;
+        return
     }
-    videoElement.volume = videoElement.volume - 0.1;
-    console.log("decreased volume", videoElement.volume);
+    const decreaseVolume = videoElement.volume - 0.1;
+    videoElement.volume = decreaseVolume
+    const percentage = (decreaseVolume * 100) + "%";
+    showToast(percentage)
 }
+
+
+function showToast(message) {
+    // toast show
+    toast.textContent = message;
+    toast.style.display = "block";
+    setTimeout(() => {
+        toast.style.display = "none"
+    }, 1000);
+}
+
+
 // identify on which event your logic should trigger
 speedUp.addEventListener("click", speedUpHandler);
 speedDown.addEventListener("click", speedDownhandler)
