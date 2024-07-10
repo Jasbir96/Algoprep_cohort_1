@@ -23,5 +23,12 @@
  * Data -> BASE64 -> 2^64
  * data:image/jpeg;base64
  * **/ 
+
+## Agenda : VLC-3
+* Volume and speed manipulation
+* showing messages -> Toast
+* controls -> working
+* Deploy github
+
 ## Pending 
 * sticky,z-index
