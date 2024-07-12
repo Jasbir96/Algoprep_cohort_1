@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyframes</title>
+</head>
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .container {
+        height: 500px;
+        width: 500px;
+        background-color: slategray;
+        position: relative;
+        /* flex */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .box {
+        height: 100px;
+        width: 100px;
+        background-color: hotpink;
+        animation-name: journey-to-circle;
+        animation-duration: 4s;
+        animation-iteration-count: 2;
+        animation-direction: alternate;
+    }
+
+    @keyframes journey-to-circle {
+
+        50% {
+            background-color: lightcoral;
+            border-radius: 50%;
+        }
+
+        75% {
+           border-radius:10% ;
+        }
+
+        100% {
+            background-color: honeydew;
+            border-radius: 0%;
+        }
+
+
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="box"></div>
+    </div>
+</body>
+
+</html>
