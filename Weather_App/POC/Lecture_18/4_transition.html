@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0px;
+    }
+
+    .box {
+        height: 200px;
+        width: 200px;
+    }
+
+    .one {
+        background-color: aqua;
+        transition-duration: 2s;
+        /* transition-property: width, rotate; */
+        /* transition-timing-function: ease-in; */
+        transition-timing-function: ease;
+    }
+
+    .two {
+        background-color: lightcoral;
+        transition-delay: 1s;
+        transition-duration: 1s;
+
+    }
+
+    .one:hover {
+        width: 100vw;
+        background-color: black;
+        /* transform: rotate(50deg); */
+    }
+
+    .two:hover {
+        width: 70vw;
+        background-color: green;
+    }
+</style>
+
+<body>
+    <div class="box one"></div>
+    <div class="box two"></div>
+
+</body>
+
+</html>

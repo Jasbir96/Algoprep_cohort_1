@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0px;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .box {
+        height: 100px;
+        width: 100px;
+        transition-duration: 1s;
+    }
+
+    .one {
+        background-color: aqua;
+
+
+    }
+
+    .two {
+        background-color: lightcoral;
+
+    }
+    .three {
+        background-color: lightgreen;
+
+    }
+    .one:hover {
+        /* transform: translateX(50%); */
+        transform: translateY(50%);
+
+    }
+    .two:hover {
+        /* transform: translateY(100%); */
+        transform: translateX(50%);
+
+    }
+
+    .three:hover {
+        transform: translate(50%, 50%);
+
+    }
+</style>
+
+<body>
+    <h2>Translate</h2>
+    <div class="box one"></div>
+    <div class="box two"></div>
+    <div class="box three"></div>
+</body>
+
+</html>
