@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+
+    body {
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .container {
+        height: 500px;
+        width: 500px;
+        background-color: slategray;
+        /* using flex  */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        animation: rotate-bg 4s linear infinite alternate;
+    }
+
+
+    .box {
+        height: 100px;
+        width: 100px;
+        background-color: hotpink;
+        animation-duration: 4s;
+        border: 3px solid black;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+        animation-name: shape-changer;
+        animation-name: box-mover;
+        /* eqaul speed through the animation */
+        animation-timing-function: linear;
+        animation-direction: alternate;
+    }
+
+    @keyframes rotate-bg {
+        to {
+            transform: rotate(-360deg);
+        }
+        50%{
+            opacity: 1;
+        }
+    }
+
+    @keyframes box-mover {
+        0% {
+            top: 0px;
+            left: 0px
+        }
+
+        33% {
+            left: 0px;
+            top: 100%;
+            transform: translateY(-100%);
+        }
+
+        50% {
+            border-radius: 50%;
+        }
+
+        66% {
+            left: 100%;
+            top: 100%;
+            transform: translate(-100%, -100%);
+        }
+
+        100% {
+            left: 100%;
+            top: 0%;
+            transform: translateX(-100%);
+
+        }
+    }
+</style>
+
+<body>
+
+    <div class="container">
+        <div class="box"></div>
+    </div>
+</body>
+
+</html>
