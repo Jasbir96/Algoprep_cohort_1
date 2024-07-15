@@ -4,7 +4,7 @@
 ### Real life user 
 * user -> url -> they see a webpage
 * First file that you  -> HTML file  
-* HTML file is parsed and converted into humam undersdtanble UI-> Browser
+* HTML file is parsed and converted into humam understandable UI-> Browser
 **Parsing** : to read a  file and convert it into a certain format
 * HTML , CSS -> Browser
 * jpg-> imageviewer -> image
@@ -29,10 +29,12 @@ JS language has inbuilt capabilities to read json data
 
 
 
-
 ## Weather App
 * need a `data` -> from an `api` ->`server url -> data`
 * that should also provide in `particular format`
+## HTTP packet
+* Header -> metadata
+* Body: actual data
 
 ```json
 {
@@ -93,5 +95,28 @@ JS language has inbuilt capabilities to read json data
     }
 }
 ```
+
+## Weather APP
+### Dependencies
+*  Data source-> api: http://api.weatherapi.com/v1/current.json?key=6fc74cf82bc44773a8a171855241407&q=Pune&aqi=no
+*  Flow
+   *  DUMMY UI [*]
+   *  Need Data -> How to make a request API request  [*]
+      *  request make
+      *  response get
+      *  data -> parse
+   *  data -> document -> data update [*]
+
+
+## Browser vs JS
+
+**Browser** : features -> Browser
+* setTimeout->browser
+* addEventListener -> browser
+* URL -> browser  
+
+**Logic** -> JS
+
+
 
 
