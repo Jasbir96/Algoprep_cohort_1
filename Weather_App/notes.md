@@ -101,10 +101,13 @@ JS language has inbuilt capabilities to read json data
 *  Data source-> api: http://api.weatherapi.com/v1/current.json?key=6fc74cf82bc44773a8a171855241407&q=Pune&aqi=no
 *  Flow
    *  DUMMY UI [*]
+      *  simple sa UI
+      *  functionality 
    *  Need Data -> How to make a request API request  [*]
       *  request make
       *  response get
       *  data -> parse
+      *  extract your required fields
    *  data -> document -> data update [*]
 
 
