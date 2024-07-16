@@ -2,9 +2,7 @@
 // select
 const searchBtn = document.querySelector("#search");
 const searchInput = document.querySelector("input");
-const tempratureElem = document.querySelector(".temprature");
-const locationElem = document.querySelector(".location");
-const emojiImg = document.querySelector(".emoji");
+
 // event listener
 searchBtn.addEventListener("click", async function () {
     const location = searchInput.value;
@@ -16,11 +14,18 @@ searchBtn.addEventListener("click", async function () {
         if (data != null) {
             // do nothing
             updateDOM(data);
-        } 
+        }
         searchInput.value = "";
     }
 })
 
+const tempratureElem = document.querySelector(".temprature");
+const locationElem = document.querySelector(".location");
+const emojiImg = document.querySelector(".emoji");
+const timeElem = document.querySelector(".time");
+const dayElem = document.querySelector(".Day");
+const dateElem = document.querySelector(".Date");
+const conditionElem = document.querySelector(".condition");
 function updateDOM(data) {
     /***********************filter required data*********************/
     console.log("i will update the dom", data);
@@ -30,14 +35,13 @@ function updateDOM(data) {
     const [date, time] = timeData.split(" ");
     const iconLink = data.current.condition.icon;
     const condition = data.current.condition.text;
-    console.log("``````````````````````````");
-    console.log("temp: ", temp, "location : ", location, "Date:", date);
-    console.log("Time ", time, "link", iconLink)
-    console.log("``````````````````````````");
     /*********************update the dom*************************/
-    tempratureElem.textContent = temp +"°C";
+    tempratureElem.textContent = temp + "°C";
     locationElem.textContent = location;
     emojiImg.src = iconLink;
+    dateElem.innerText = date;
+    timeElem.innerText = time;
+    conditionElem.innerText=condition;
 
 }
 
