@@ -7,10 +7,12 @@ const totalTimeElem = document.querySelector("#totalTime");
 const currentTimeElem = document.querySelector("#currentTime");
 const slider = document.querySelector("#slider");
 
-let video
+
+let video=""
 let duration;
 let timerObj;
-let currentPlayTime;
+let currentPlayTime=0;
+let isPlaying = false;
 
 const handleInput = () => {
     // console.log("Input is clicked");
@@ -36,6 +38,8 @@ const acceptInputHandler = (obj) => {
     // now after the above check -> add the videoElement
     videoPlayer.appendChild(videoElement);
     video = videoElement
+    isPlaying = true;
+    setPlayPause();
     videoElement.play();
     videoElement.volume = 0.3;
     videoElement.addEventListener("loadedmetadata", function () {
@@ -148,7 +152,7 @@ volumeUp.addEventListener("click", volumeUpHandler);
 volumeDown.addEventListener("click", volumeDownHandler);
 
 
-/***********controls******************/
+/***********controls****************************************/
 const handleFullScreen = () => {
     videoPlayer.requestFullscreen();
 }
@@ -160,7 +164,6 @@ slider.addEventListener("change", function (e) {
     let value = e.target.value;
     video.currentTime = value;
 })
-
 
 /***********forward and backward button*************/
 function forward() {
@@ -186,6 +189,47 @@ const forwardBtn = document.querySelector("#forwardBtn");
 const backwardBtn = document.querySelector("#backBtn");
 forwardBtn.addEventListener("click", forward);
 backwardBtn.addEventListener("click", backward);
+/****************play pause********************/
+const playPauseContainer = document.querySelector("#playPause");
+function setPlayPause() {
+    if (isPlaying === true) {
+        playPauseContainer.innerHTML = `<i class="fas fa-pause state"></i>`;
+        video.play();
+    }
+    else {
+        playPauseContainer.innerHTML = `<i class="fas fa-play state"></i>`;
+        video.pause();
+    }
+}
+
+playPauseContainer.addEventListener("click", function (e) {
+    if (video) {
+        isPlaying = !isPlaying;
+        setPlayPause();
+    }
+})
+
+/******stop btn********/
+const stopBtn = document.querySelector("#stopBtn");
+const stopHandler = () => {
+    if (video) {
+        // remove the video from ui 
+        video.remove();
+        // reset all the varibales
+        isPlaying = false;
+        currentPlayTime = 0;
+        slider.value = 0;
+        video = "";
+        duration="";
+        totalTimeElem.innerText = '--/--';
+        currentTimeElem.innerText = '00:00';
+        slider.setAttribute("value", 0);
+        stopTimer();
+        setPlayPause();
+    }
+}
+
+stopBtn.addEventListener("click", stopHandler)
 
 /***************utility function to convert secs into hrs :mns : seconds*****************/
 function timeFormat(timeCount) {
@@ -214,6 +258,7 @@ function startTimer() {
         if (currentPlayTime == duration) {
             state = "pause";
             stopTimer();
+            setPlayPause();
             video.remove();
             slider.value = 0;
             currentTimeElem.innerText = "00:00:00";
