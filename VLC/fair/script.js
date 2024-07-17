@@ -8,10 +8,10 @@ const currentTimeElem = document.querySelector("#currentTime");
 const slider = document.querySelector("#slider");
 
 
-let video=""
+let video = ""
 let duration;
 let timerObj;
-let currentPlayTime=0;
+let currentPlayTime = 0;
 let isPlaying = false;
 
 const handleInput = () => {
@@ -20,8 +20,15 @@ const handleInput = () => {
     videoInput.click();
 }
 const acceptInputHandler = (obj) => {
-    // to get file selected
-    const selectedVideo = obj.target.files[0];
+    let selectedVideo;
+    // console.log(obj);
+    if (obj.type == "drop") {
+        selectedVideo = obj.dataTransfer.files[0]
+
+    } else {
+        selectedVideo = obj.target.files[0];
+
+    }
     //  src -> base64 
     const link = URL.createObjectURL(selectedVideo);
     // console.log(link);
@@ -220,7 +227,7 @@ const stopHandler = () => {
         currentPlayTime = 0;
         slider.value = 0;
         video = "";
-        duration="";
+        duration = "";
         totalTimeElem.innerText = '--/--';
         currentTimeElem.innerText = '00:00';
         slider.setAttribute("value", 0);
@@ -269,3 +276,26 @@ function startTimer() {
 function stopTimer() {
     clearInterval(timerObj);
 }
+
+
+
+/**********************enable drag and drop**********************/
+// Prevent default behavior for dragover and dragleave events
+videoPlayer.addEventListener('dragenter', (e) => {
+    e.preventDefault();
+})
+
+videoPlayer.addEventListener('dragover', (e) => {
+    e.preventDefault();
+})
+
+videoPlayer.addEventListener('dragleave', (e) => {
+    e.preventDefault();
+})
+
+
+videoPlayer.addEventListener('drop', (e) => {
+    e.preventDefault();
+    acceptInputHandler(e);
+})
+
