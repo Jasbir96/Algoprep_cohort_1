@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
     <!-- browser reset  -->
     <link rel="stylesheet" href="reset.css">
     <!-- new styling specific to this application -->
@@ -44,10 +45,34 @@
     </header>
     <main id="main"></main>
     <div class="toast"></div>
-    <footer >
-        <i class="fa-solid fa-pause"></i>
-        <i class="fa-solid fa-play"></i>
-        <i class="fa-solid fa-expand" id="fullScreen"></i>
+    <footer>
+        <div class="time-container">
+            <div class="current-time ">--/--/--</div>
+            <div class="time-slider ">
+                <input type="range" value="0" min="0" class="slider" id="slider">
+            </div>
+            <div class="total-time ">--/--/--</div>
+        </div>
+        <div class="menu-btns">
+            <div class="play_pause-container btn">
+                <i class="fas fa-play state"></i>
+                <!-- <i class="fas fa-pause state"></i> -->
+            </div>
+            <div class="rest-options">
+                <div class="back-btn btn">
+                    <i class="fas fa-backward"></i>
+                </div>
+                <div class="placeholder btn">
+                    <i class="fas fa-stop"></i>
+                </div>
+                <div class="forward-btn btn">
+                    <i class="fas fa-forward"></i>
+                </div>
+                <div class="fullscreen-btn btn" id="fullScreen">
+                    <i class="fas fa-expand"></i>
+                </div>
+            </div>
+        </div>
     </footer>
 </body>
 
