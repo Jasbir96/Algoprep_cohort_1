@@ -299,3 +299,35 @@ videoPlayer.addEventListener('drop', (e) => {
     acceptInputHandler(e);
 })
 
+
+
+
+/*********keyboard support***************/
+const body = document.querySelector("body");
+// keyboard inputs
+body.addEventListener("keyup", function (e) {
+    console.log(e.key);
+    if (!video) return;
+    if (e.code == "Space") {
+        isPlaying = !isPlaying
+        setPlayPause();
+    }
+    else if (e.key == "ArrowUp" ) {
+        volumeUpHandler()
+    }
+    else if (e.key == "ArrowDown") {
+        volumeDownHandler();
+    }
+    else if (e.key == "+") {
+        speedUpHandler();
+    }
+    else if (e.key == "-") {
+        speedDownhandler();
+    }
+    else if (e.key == "ArrowRight") {
+        forward();
+    }
+    else if (e.key == "ArrowLeft") {
+        backward();
+    }
+})
