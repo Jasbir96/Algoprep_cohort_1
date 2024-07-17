@@ -19,15 +19,18 @@ const acceptInputHandler = (obj) => {
 
     const videoElement = document.createElement("video");
     videoElement.src = link;
-    // now it is done
     videoElement.setAttribute("class", "video");
+    // check if there are any video already present
+    if (videoPlayer.children.length > 0) {
+
+        // if present -> remove it 
+        videoPlayer.removeChild(videoPlayer.children[0]);
+    }
+    // now after the above check -> add the videoElement
     videoPlayer.appendChild(videoElement);
-    // videoElement.controls = true;
     videoElement.play();
     videoElement.volume = 0.3;
-    // how to inc/dec the volume of a video in js 
-    // how to inc/dec speed of a video in js 
-    videoElement.addEventListener("loadedmetadata",function(){
+    videoElement.addEventListener("loadedmetadata", function () {
         // your time will there
     })
 }
@@ -135,4 +138,4 @@ const handleFullScreen = () => {
 }
 
 const fullScreenElem = document.querySelector("#fullScreen");
-fullScreenElem.addEventListener("click",handleFullScreen)
+fullScreenElem.addEventListener("click", handleFullScreen)
