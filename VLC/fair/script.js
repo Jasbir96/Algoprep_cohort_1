@@ -155,13 +155,37 @@ const handleFullScreen = () => {
 
 const fullScreenElem = document.querySelector("#fullScreen");
 fullScreenElem.addEventListener("click", handleFullScreen)
-// adding seek behaviour in slider
+// adding seek behavior in slider
 slider.addEventListener("change", function (e) {
     let value = e.target.value;
     video.currentTime = value;
 })
 
 
+/***********forward and backward button*************/
+function forward() {
+    currentPlayTime = Math.round(video.currentTime) + 5;
+    video.currentTime = currentPlayTime;
+    slider.setAttribute("value", currentPlayTime);
+    showToast("Forward by 5 sec");
+    let time = timeFormat(currentPlayTime);
+    currentTimeElem.innerText = time;
+}
+
+function backward() {
+    currentPlayTime = Math.round(video.currentTime) - 5;
+    video.currentTime = currentPlayTime;
+    slider.setAttribute("value", currentPlayTime);
+    showToast("Backward by 5 sec");
+    let time = timeFormat(currentPlayTime);
+    currentTimeElem.innerText = time;
+}
+
+
+const forwardBtn = document.querySelector("#forwardBtn");
+const backwardBtn = document.querySelector("#backBtn");
+forwardBtn.addEventListener("click", forward);
+backwardBtn.addEventListener("click", backward);
 
 /***************utility function to convert secs into hrs :mns : seconds*****************/
 function timeFormat(timeCount) {

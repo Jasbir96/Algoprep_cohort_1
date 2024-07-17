@@ -55,6 +55,7 @@ border: 1px solid rgb(7, 93, 133);
     top: 1px;
     width: 9rem;
     display: none;
+    cursor: pointer;
 }
 
 .menu:hover .menu-items {
@@ -63,6 +64,9 @@ border: 1px solid rgb(7, 93, 133);
 
 li {
     padding: 0.25rem;
+}
+li:hover{
+background-color: rgb(172, 172, 172)
 }
 
 .videoInput {
@@ -148,6 +152,8 @@ footer {
     gap: 0.5rem;
     margin-left: 2rem;
     margin-top: 0.5rem;
+    cursor: pointer;
+    
 }
 
 i {
