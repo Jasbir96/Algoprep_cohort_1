@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button>Fetch Data</button>
+    <script>
+        const btn = document.querySelector("button");
+        // function datapcb(data) {
+        //     console.log("iside datapcb")
+        //     console.log(data);
+
+        // }
+
+        // function pcb(response) {
+        //     console.log("inisde pcb")
+        //     response.json().then(datapcb);
+        // }
+        async function cb() {
+            console.log(" I am clicked");
+
+            const url = "https://jsonplaceholder.typicode.com/todos/1";
+            console.log("Promise before");
+            // asynchronous promise based function
+            // fetch(url).then(pcb)
+            const response = await fetch(url);
+            const data = await response.json();
+            console.log("38", data);
+            console.log("Promise After");
+        }
+        // addEventLIstenre -> asynchronous cb based function
+        console.log("Before");
+
+        btn.addEventListener("click", cb);
+
+        console.log("After");
+    </script>
+
+</body>
+
+</html>
