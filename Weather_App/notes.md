@@ -121,5 +121,14 @@ JS language has inbuilt capabilities to read json data
 **Logic** -> JS
 
 
+## Resume
+Weather APP       Githublink Deployedlink
+* Built a weather application using HTML ,CSS and JS -> what tech you have used
+* It takes location from the users and show the current weather details 
+* I have used fetch and document API to build it 
+  
+
+
+
 
 
