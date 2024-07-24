@@ -21,25 +21,20 @@ https://fonts.google.com/
 
 
 ## Browser 
-* https://www.youtube.com/channel/UCTBGXCJHORQjivtgtMsmkAQ : Steve Griffith
-
-Canvas :
-* **Canvas API** : https://www.youtube.com/watch?v=gm1QtePAYTM
-https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Drawing_graphics
-https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D
-**Document API**: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents
-**Files**: * https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications#Example_Using_object_URLs_to_display_images * https://stackoverflow.com/questions/12796513/html5-canvas-to-png-file
+* Web api Playlist : https://www.youtube.com/channel/UCTBGXCJHORQjivtgtMsmkAQ : Steve Griffith
 **Event Reference** : https://developer.mozilla.org/en-US/docs/Web/Events
-Videos
-**Dom tutorial** : https://www.youtube.com/playlist?list=PL4cUxeGkcC9gfoKa5la9dsdCNpuey2s-V
-**Canvas Crash Course:** https://youtu.be/Yvz_axxWG4Y
+* **MDN**: https://developer.mozilla.org/en-US/docs/Web/API
 
+**Canvas** :
+* **Canvas API** : https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Drawing_graphics
+
+**Document API**: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents
+**Files**: * https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications#Example_Using_object_URLs_to_display_images 
+            * https://stackoverflow.com/questions/12796513/html5-canvas-to-png-file
 ## Camera
-https://developer.mozilla.org/en-US/docs/Web/API
-https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia
-Canvas https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Drawing_graphics
-https://developer.mozilla.org/en-US/docs/Web/API/MediaStream_Recording_API
-https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Drawing_graphics
-https://www.30secondsofcode.org/css/t/animation/p/1
-https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D
+* https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia
+* https://developer.mozilla.org/en-US/docs/Web/API/MediaStream_Recording_API
 
+
+ 
+Frontend Project : https://www.youtube.com/playlist?list=PL-Jc9J83PIiHU9RkY9sfh3G64-bd0ptvC
