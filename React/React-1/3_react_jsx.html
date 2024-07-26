@@ -25,16 +25,13 @@
     <script type="text/babel">
         const rootElement = document.getElementById('root');
 
+
         // functions that returns -> html
-        function Heading(props) {
-            const age = props.age;
-            const name = props.name;
-            return <h1>Hi I am {name} and I am {age} old</h1>
+        function Heading() {
+            return <h1>Hi from JSX:)</h1>
         }
-        // ReactDOM
-        ReactDOM.render(<Heading 
-        name={"Jasbir"} age={27}>
-        </Heading>, rootElement)
+        // ReactDOM-> 1
+        ReactDOM.render(<Heading></Heading>, rootElement)
 
     </script>
 </body>
