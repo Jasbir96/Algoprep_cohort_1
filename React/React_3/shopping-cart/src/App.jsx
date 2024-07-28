@@ -1,4 +1,5 @@
 import InputBox from "./Components/Input"
+import Shopping from "./Components/Shopping"
 
 
 function App() {
@@ -6,7 +7,8 @@ function App() {
   return (
     <div>
       <h1>hello React</h1>
-      <InputBox></InputBox>
+      {/* <InputBox></InputBox> */}
+      <Shopping></Shopping>
     </div>
 
   )
