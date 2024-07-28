@@ -14,6 +14,7 @@
     * npm install
     * npm run dev
 **Everytime** : open in terminal -> npm run dev
+**If you are using somone else's code** -> npm i 
 
 ## HW
 * code write -> till 2nd class
