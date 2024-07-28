@@ -7,7 +7,7 @@
 * open in terminal
   * type -> `npm create vite@latest`
     * ✔ Project name: … react-intro
-    * ✔ Select a framework: › React
+    * ✔ Select a framework: › **React**
     * ✔ Select a variant: › JavaScript  
   * type these three command
     *  cd react-intro
