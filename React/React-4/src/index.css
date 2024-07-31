@@ -1,13 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* * {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0px
-}
 
 ul {
   padding: 0;
@@ -18,8 +11,7 @@ li {
 }
 
 
-
 html {
   font-family: sans-serif;
-} */
+}
 

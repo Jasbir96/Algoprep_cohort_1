@@ -23,3 +23,19 @@ export default {
 @tailwind components;
 @tailwind utilities;
 ```
+
+## Properties
+height -> h-[unit]
+background-colour -> bg-[#customcolor]
+justify-content:-> items-center 
+width -> w-[60%] 
+color-> text-color-name/text-[#customcolor ]
+border-> border
+padding -> p with x for left and right , y -> top , bottom
+
+
+
+## Extension 
+* Tailwind intellisense
+* inline fold-> hide your tailwind classes
+* ES7+ React/Redux/React-Native snippet
