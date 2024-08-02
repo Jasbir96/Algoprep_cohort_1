@@ -53,3 +53,11 @@
 * File Sharing ->firebase
 * Groups -> firebase
 * VOice calling and video calling -> one-on-one 
+
+
+
+
+
+## Day-1
+* Routing is done
+* Pending : Protected Routes
