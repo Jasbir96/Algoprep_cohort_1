@@ -1,3 +1,4 @@
+## steps 
 1. In your react app  go to terminal and type two command
 * npm install -D tailwindcss postcss autoprefixer
 * npx tailwindcss init -p
@@ -24,15 +25,20 @@ export default {
 @tailwind utilities;
 ```
 
+
+## Resources 
+* Tailwind Installation Guide : https://tailwindcss.com/docs/guides/vite
+* Tailwind Official Website :https://tailwindcss.com/docs/utility-first
+* Tailwind cheat sheet : https://nerdcave.com/tailwind-cheat-sheet
+
 ## Properties
 height -> h-[unit]
 background-colour -> bg-[#customcolor]
 justify-content:-> items-center 
 width -> w-[60%] 
-color-> text-color-name/text-[#customcolor ]
+color-> text-color-name/text-[#customcolor]
 border-> border
 padding -> p with x for left and right , y -> top , bottom
-
 
 
 ## Extension 
