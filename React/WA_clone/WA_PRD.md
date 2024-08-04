@@ -54,5 +54,26 @@
 
 
 ## Day-1
+* Walkthrough
+* Product Requirements
 * Routing is done
-* Pending : Protected Routes
+* Firebase
+
+## Day-2
+
+* Revise 
+* Protected Routes -> React-router-dom
+* useEffect
+* Firebase 
+  * auth -> authentication[google login]
+
+  * db -> firestore db(textual information)
+  * storage -> files 
+  * hosting -> application host
+
+
+
+
+
+HomePage -> /
+Login -> "/login"
