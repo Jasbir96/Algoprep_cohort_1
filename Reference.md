@@ -23,7 +23,7 @@ https://fonts.google.com/
 
 
 ## Browser 
-* Web api Playlist : https://www.youtube.com/channel/UCTBGXCJHORQjivtgtMsmkAQ : Steve Griffith
+* HTML5 APIs Playlist : https://youtube.com/playlist?list=PLyuRouwmQCjlBGMxI_0Ly_Dw-vrniOYNh&feature=shared : Steve Griffith
 **Event Reference** : https://developer.mozilla.org/en-US/docs/Web/Events
 * **MDN**: https://developer.mozilla.org/en-US/docs/Web/API
 
