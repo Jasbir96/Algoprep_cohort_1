@@ -1,15 +1,13 @@
 ## WA clone
-
 **User discovery** :  whenever user logs in it will be shown in the left chat screen -> all the users will be visible 
 
-## Routes
+### Routes
 * Login -> `/login` 
 * Protected Route  Home -> `/`  & if not loggedIN-> redirect to login 
 * Chat  -> /uniqueId
 * 404 -> if not the above url -> take the user to 404 page not found
 
-
-## Views
+### Views : these are the screens / views visible to user at a given point of time 
 * login screen
 * Home Page 
 * 404 Page
@@ -52,10 +50,7 @@
 ## Future Scope
 * File Sharing ->firebase
 * Groups -> firebase
-* VOice calling and video calling -> one-on-one 
-
-
-
+* Voice calling and video calling -> one-on-one 
 
 
 ## Day-1
