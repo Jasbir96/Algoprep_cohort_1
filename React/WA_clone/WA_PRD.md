@@ -70,10 +70,6 @@
   * db -> firestore db(textual information)
   * storage -> files 
   * hosting -> application host
+ 
 
 
-
-
-
-HomePage -> /
-Login -> "/login"

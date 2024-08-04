@@ -3,6 +3,7 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import Home from "./Home";
 import Login from "./Login"
 import ProtectedRoute from "./ProtectedRoute"
+import Chat from './Chat';
 // route ki matching -> BiggerComponent[originalCompoenent]  
 
 function Routing_App() {
