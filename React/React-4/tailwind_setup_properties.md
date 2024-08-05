@@ -3,7 +3,7 @@
 * npm install -D tailwindcss postcss autoprefixer
 * npx tailwindcss init -p
   
-2. A new file Taildin.config.js will be created . Replace this content
+2. A new file Tailwind.config.js will be created . Replace this content
 ```js
 /** @type {import('tailwindcss').Config} */
 export default {

@@ -6,7 +6,6 @@ import Home from "./Components/Home";
 function App() {
   return (
     <>
-      <h1>Whatsapp Clone</h1>
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         {/* it will only match with /login string */}
