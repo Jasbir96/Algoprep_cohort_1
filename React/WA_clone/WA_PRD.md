@@ -52,7 +52,6 @@
 * Groups -> firebase
 * Voice calling and video calling -> one-on-one 
 
-
 ## Day-1
 * Walkthrough
 * Product Requirements
