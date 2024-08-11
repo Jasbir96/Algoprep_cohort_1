@@ -12,7 +12,7 @@ function Login() {
                     <img src="https://whatsapp-clone-826a9.web.app/whatsapp.svg" alt=""
                         className='h-8'
                     />
-                    <div className="text-white uppercase font-medium" >Whatsapp</div>
+                    <div className="text-white uppercase font-medium">Whatsapp</div>
                 </div>
             </div>
             <div className='h-[calc(100vh-220px)] bg-[#eff2f5] flex justify-center items-center relative'>
