@@ -1,5 +1,5 @@
-import { useContext } from "react";
-import { ThemeWrapper } from "../../App";
+import { useDarkTheme } from "./ThemeContext";
+
 
 function Header() {
     console.log("renderd Header");
@@ -20,7 +20,8 @@ function Header() {
 }
 
 function Options() {
-    const isDark = useContext(ThemeWrapper);
+    // const {isDark} = useContext(ThemeWrapper);
+    const isDark =useDarkTheme();
 
     return <div className={`${isDark?"dark":"light"}`}>Option</div>
 }

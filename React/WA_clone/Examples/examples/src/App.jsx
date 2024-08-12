@@ -5,7 +5,7 @@ import ShoppingCart from './Components/ShoppingCart';
 
 import Counter from './Components/Counter';
 
-import React,{ useState } from "react";
+import React, { useState } from "react";
 import PropDrilling from './Context/PropDrilling';
 import PropDrillingSol from './Context/PropDrillingSol';
 
@@ -14,14 +14,11 @@ import Home from './Context/ThemeChanger/Home';
 import PageNotFound from './Context/ThemeChanger/PageNotFound';
 
 
-export const ThemeWrapper = React.createContext();
+import  { useDarkTheme } from './Context/ThemeChanger/ThemeContext';
 
 function App() {
-  const [isDark, updateTheme] = useState(false);
-  const handleToggleTheme = () => {
-    updateTheme(!isDark);
-  }
-  
+
+  const { handleToggleTheme } = useDarkTheme();
   return (
     <>
       <h1>App component</h1>
@@ -36,12 +33,11 @@ function App() {
       {/* <PropDrillingSol></PropDrillingSol> */}
 
       <button onClick={handleToggleTheme}> Toggle Theme</button>
-      <ThemeWrapper.Provider value={isDark}>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='*' element={<PageNotFound />} />
-        </Routes>
-      </ThemeWrapper.Provider>
+
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='*' element={<PageNotFound />} />
+      </Routes>
 
     </>
   )
