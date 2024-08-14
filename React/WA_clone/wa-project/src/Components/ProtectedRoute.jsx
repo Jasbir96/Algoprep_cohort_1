@@ -1,3 +1,5 @@
+import { Navigate } from "react-router-dom";
+
 function ProtectedRoute(props) {
     const isLoggedIn = props.isLoggedIn;
     const children = props.children;

@@ -8,6 +8,7 @@ import { useState } from "react";
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+
   return (
     <>
       <Routes>
@@ -18,6 +19,7 @@ function App() {
         <Route path="/chat/:uniqueId" element={
           <ProtectedRoute isLoggedIn={isLoggedIn}><Chat></Chat></ProtectedRoute>
         }></Route>
+
         <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn}></Login>}></Route>
         <Route path="*" element={< PageNotFound />} />
       </Routes>

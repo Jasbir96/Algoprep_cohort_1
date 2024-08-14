@@ -4,8 +4,21 @@ import { Fingerprint, LogIn as LoginIcon } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 // auth-step-3
 import { signInWithPopup } from "firebase/auth";
-import { auth } from '../../firebase';
+import { auth, db } from '../../firebase';
 import { GoogleAuthProvider } from 'firebase/auth';
+import { doc, setDoc } from 'firebase/firestore';
+
+
+
+async function createUser(authData) {
+    const userObject = authData.user;
+    const { uid, photoURL, displayName, email } = userObject;
+    await setDoc(doc(db, "users", uid), {
+        email,
+        profile_pic: photoURL,
+        name: displayName
+    })
+}
 
 
 function Login(props) {
@@ -16,8 +29,9 @@ function Login(props) {
     const handleLogin = async () => {
         // login wala logic 
         // auth-step-4
-        const result = await signInWithPopup(auth, new GoogleAuthProvider);
-        console.log(result);
+        const userData = await signInWithPopup(auth, new GoogleAuthProvider);
+
+        await createUser(userData)
         setIsLoggedIn(true);
         // alert("login");
         navigate("/");
@@ -39,11 +53,13 @@ function Login(props) {
                         strokeWidth={1} />
                     <div>Sign In</div>
                     <div>Sign in with your google account to get started.</div>
-                    <button className='flex gap-2 items-center bg-[#04a784] p-4 text-white rounded-[5px]'>
+                    <button
+                        onClick={handleLogin}
+                        className='flex gap-2 items-center bg-[#04a784] p-4 text-white rounded-[5px]'>
                         <div >
                             Sign in with Google
                         </div>
-                        <LoginIcon onClick={handleLogin}/>
+                        <LoginIcon />
                     </button>
                 </div>
             </div>
