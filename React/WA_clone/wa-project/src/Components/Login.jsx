@@ -7,7 +7,7 @@ import { signInWithPopup } from "firebase/auth";
 import { auth, db } from '../../firebase';
 import { GoogleAuthProvider } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
-
+import { useAuth } from './AuthContext';
 
 
 async function createUser(authData) {
@@ -18,21 +18,29 @@ async function createUser(authData) {
         profile_pic: photoURL,
         name: displayName
     })
+
+
 }
 
 
-function Login(props) {
-    const setIsLoggedIn = props.setIsLoggedIn;
-
-    const navigate = useNavigate();
-
+function Login() {
+    // use karte ho 
+    const { setUserData} = useAuth();
+    const navigate = useNavigate(); ``
     const handleLogin = async () => {
         // login wala logic 
         // auth-step-4
         const userData = await signInWithPopup(auth, new GoogleAuthProvider);
-
         await createUser(userData)
-        setIsLoggedIn(true);
+        const userObject = userData.user;
+        const { uid, photoURL, displayName, email } = userObject;
+        // context me jaake save kr dia hai user ka data
+        setUserData({
+            id: uid,
+            profile_pic: photoURL,
+            email,
+            name: displayName
+        });
         // alert("login");
         navigate("/");
     }

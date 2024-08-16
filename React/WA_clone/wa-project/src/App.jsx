@@ -6,21 +6,21 @@ import Home from "./Components/Home";
 import ProtectedRoute from "./Components/ProtectedRoute";
 import { useState } from "react";
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // loggdeIn -> information , user data -> CRUD
 
 
   return (
     <>
       <Routes>
-        <Route path="/" element={<ProtectedRoute isLoggedIn={isLoggedIn}  >
-          <Home setIsLoggedIn={setIsLoggedIn}></Home>
+        <Route path="/" element={<ProtectedRoute   >
+          <Home ></Home>
         </ProtectedRoute>}></Route>
 
         <Route path="/chat/:uniqueId" element={
-          <ProtectedRoute isLoggedIn={isLoggedIn}><Chat></Chat></ProtectedRoute>
+          <ProtectedRoute ><Chat></Chat></ProtectedRoute>
         }></Route>
 
-        <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn}></Login>}></Route>
+        <Route path="/login" element={<Login ></Login>}></Route>
         <Route path="*" element={< PageNotFound />} />
       </Routes>
     </>
