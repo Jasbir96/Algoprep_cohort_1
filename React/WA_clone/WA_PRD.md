@@ -72,3 +72,33 @@
  
 
 
+
+
+## Firebase deployemnt 
+* Enable hosting by going to your firebase console's project
+* go to the place where you run the react file
+```bash
+npm install -g firebase-tools
+npm run build
+```
+
+* if deploying for first time
+
+```bash
+firebase login
+```
+* always
+```bash
+firebase init 
+```
+from the options 
+- hosting ->
+        -  optional github action : no
+        - public dir : dist
+        - rewrites -> no ,
+        - overwrite -> no
+        - single page aplication : yes
+
+```bash
+firebase deploy
+```
