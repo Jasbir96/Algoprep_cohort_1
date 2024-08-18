@@ -3,6 +3,7 @@ import { useAuth } from "./AuthContext";
 
 function ProtectedRoute(props) {
     const { userData } = useAuth();
+    console.log("user Data",userData)
     const children = props.children;
     if (userData) {
         return children

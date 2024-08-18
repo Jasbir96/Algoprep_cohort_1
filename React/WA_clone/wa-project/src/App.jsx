@@ -7,17 +7,15 @@ import ProtectedRoute from "./Components/ProtectedRoute";
 import { useState } from "react";
 function App() {
   // loggdeIn -> information , user data -> CRUD
-
-
   return (
     <>
       <Routes>
-        <Route path="/" element={<ProtectedRoute   >
+        <Route path="/" element={<ProtectedRoute>
           <Home ></Home>
         </ProtectedRoute>}></Route>
 
-        <Route path="/chat/:uniqueId" element={
-          <ProtectedRoute ><Chat></Chat></ProtectedRoute>
+      <Route path="/:chatid" element={
+          <ProtectedRoute><Home></Home></ProtectedRoute>
         }></Route>
 
         <Route path="/login" element={<Login ></Login>}></Route>

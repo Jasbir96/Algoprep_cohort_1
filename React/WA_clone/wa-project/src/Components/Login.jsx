@@ -25,8 +25,16 @@ async function createUser(authData) {
 
 function Login() {
     // use karte ho 
-    const { setUserData} = useAuth();
-    const navigate = useNavigate(); ``
+    const { setUserData, userData } = useAuth();
+
+    const navigate = useNavigate();
+
+    if (userData != null) {
+        navigate("/");
+        return <></>
+    }
+
+
     const handleLogin = async () => {
         // login wala logic 
         // auth-step-4

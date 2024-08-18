@@ -2,6 +2,7 @@ import React from 'react'
 import { storage } from "../../firebase";
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 import ChatPanel from './ChatPanel';
+import Chat from './Chat';
 
 function Home() {
   // const handleChange = (e) => {
@@ -45,20 +46,10 @@ function Home() {
         accept='image/png image/jpeg image/webp'
         onChange={handleChange}
       ></input> */}
-      {/* conditonal rehne waale hai  */}
-
+      {/* conditonal rehne waale hai -> chat list , profile */}
       <ChatPanel />
-      {/* list of users leke aane from your firebase */}
-      {/* <div>Chat Panel</div>  */}
-      {/* 
-
-1. chat Panel Profile Button click -> then it should open
-2. currently loggedIn user ka data 
-*/}
-      {/* <div>Profile</div> */}
-
-      {/* <div>Empty Chat</div>
-      <div>Individual CHat</div> */}
+      {/* <div>Empty Chat</div>:<div>Individual CHat</div> */}
+      <Chat></Chat>
 
     </>
 
