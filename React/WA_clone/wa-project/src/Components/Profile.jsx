@@ -5,7 +5,7 @@ import { useAuth } from './AuthContext'
 function Profile(props) {
     const { userData } = useAuth();
     return (
-        <>
+        <div className='bg-white w-[30vw]'>
             <div className="bg-green-400 text-white py-4 text-lg px-4 flex items-center gap-6">
                 <button onClick={props.onBack}>
                     <ArrowLeft />
@@ -18,7 +18,7 @@ function Profile(props) {
                 <h2>{userData.name}</h2>
                 <h2>{userData.email}</h2>
             </div>
-        </>
+        </div>
 
     )
 }

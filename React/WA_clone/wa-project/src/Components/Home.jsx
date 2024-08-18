@@ -2,7 +2,7 @@ import React from 'react'
 import { storage } from "../../firebase";
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 import ChatPanel from './ChatPanel';
-import Chat from './Chat';
+import ChatWindow from './ChatWindow';
 
 function Home() {
   // const handleChange = (e) => {
@@ -40,18 +40,21 @@ function Home() {
   // }
 
   return (
-    <>
-      <div>Home</div>
+    <main className='w-full h-screen bg-[#E3E1DB]'>
+
       {/* <input type='file'
         accept='image/png image/jpeg image/webp'
         onChange={handleChange}
       ></input> */}
-      {/* conditonal rehne waale hai -> chat list , profile */}
-      <ChatPanel />
-      {/* <div>Empty Chat</div>:<div>Individual CHat</div> */}
-      <Chat></Chat>
+      <div className="bg-[#eff2f5] w-full h-full shadow-md flex">
+        {/* conditonal rehne waale hai -> chat list , profile */}
+        <ChatPanel />
+        {/* <div>Empty Chat</div>:<div>Individual CHat</div> */}
+        <ChatWindow></ChatWindow>
+      </div>
 
-    </>
+
+    </main>
 
   )
 }
