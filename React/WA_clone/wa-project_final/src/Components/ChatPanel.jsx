@@ -69,7 +69,7 @@ function ChatPanel() {
             {
                 isLoading ? <div className="h-full w-full flex justify-center items-center"><Loader2Icon className="w-10 h-10 animate-spin" /> </div> :
 
-                    <div className="bg-white dark:bg-chat-bg py-2 px-3">
+                    <div className="bg-white py-2 px-3">
                         {/* Search Bar  */}
                         <div className="bg-background flex items-center gap-4 px-3 py-2 rounded-lg">
                             <SearchIcon className="w-4 h-4" />
