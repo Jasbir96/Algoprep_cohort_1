@@ -40,18 +40,23 @@ function Home() {
   // }
 
   return (
-    <main className='w-full h-screen bg-[#E3E1DB]'>
+    <main className='relative w-full h-screen bg-[#E3E1DB]'>
 
       {/* <input type='file'
         accept='image/png image/jpeg image/webp'
         onChange={handleChange}
       ></input> */}
-      <div className="bg-background w-full h-full shadow-md flex">
-        {/* conditonal rehne waale hai -> chat list , profile */}
-        <ChatPanel />
-        {/* <div>Empty Chat</div>:<div>Individual CHat</div> */}
-        <ChatWindow></ChatWindow>
+      <div className="absolute top-0 h-[130px] bg-primary  w-full" />
+      
+      <div className="absolute p-5 top-0 h-screen w-full">
+        <div className="bg-background w-full h-full shadow-md flex">
+          {/* conditonal rehne waale hai -> chat list , profile */}
+          <ChatPanel />
+          {/* <div>Empty Chat</div>:<div>Individual CHat</div> */}
+          <ChatWindow></ChatWindow>
+        </div>
       </div>
+
 
 
     </main>

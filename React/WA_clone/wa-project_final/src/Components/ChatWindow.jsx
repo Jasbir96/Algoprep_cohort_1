@@ -110,9 +110,15 @@ function ChatWindow() {
           alt="profile picture"
           className="w-9 h-9 rounded-full object-cover"
         />
-        <h3>{secondUser?.name}</h3>
+        <div >
+          <h3>{secondUser?.name}</h3>
+          {secondUser?.lastSeen && (
+            <p className="text-xs text-neutral-400">
+              last seen at {secondUser?.lastSeen}
+            </p>
+          )}
+       </div>
       </div>
-
       <div className="flex-grow flex flex-col gap-12 p-6 overflow-y-scroll">
         {/* chat messages */}
         {/*... */}

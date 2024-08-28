@@ -7,7 +7,7 @@ import { signInWithPopup } from "firebase/auth";
 import { auth, db } from '../../firebase';
 import { GoogleAuthProvider } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
-import { useAuth } from './AuthContext';
+
 
 
 async function createUser(authData) {
@@ -18,11 +18,7 @@ async function createUser(authData) {
         profile_pic: photoURL,
         name: displayName
     })
-
-
 }
-
-
 function Login() {
     const navigate = useNavigate();
     const handleLogin = async () => {
@@ -48,8 +44,8 @@ function Login() {
                 <div className='h-[80%] w-[50%] bg-white shadow-2xl flex flex-col gap-4 justify-center items-center absolute -top-[93px]'>
                     <Fingerprint className='h-20 w-20 text-primary'
                         strokeWidth={1} />
-                    <div>Sign In</div>
-                    <div>Sign in with your google account to get started.</div>
+                    <div className='text-2xl font-medium mb-2'>Sign In</div>
+                    <div className='text-xs font-light text-slate-500 text-center'>Sign in with your google account <br />to get started.</div>
                     <button
                         onClick={handleLogin}
                         className='flex gap-2 items-center bg-primary p-4 text-white rounded-[5px]'>
