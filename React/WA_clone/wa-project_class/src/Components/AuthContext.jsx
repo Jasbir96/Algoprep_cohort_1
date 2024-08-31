@@ -13,10 +13,13 @@ export function useAuth() {
 
 function AuthWrapper({ children }) {
     const [userData, setUserData] = useState(null);
+    const [loading, setLoading] = useState(true);
+
     useEffect(() => {
         // check kr rahe ho if you have logged in before
         // kuch bhi change -> yha update ho jaayega 
         onAuthStateChanged(auth, async (currentUser) => {
+            setLoading(true);
             if (currentUser) {
                 const docRef = doc(db, "users", currentUser?.uid);
                 const docSnap = await getDoc(docRef);
@@ -32,11 +35,12 @@ function AuthWrapper({ children }) {
                     console.log("userData Added");
                 }
             }
+            setLoading(false);
         })
     }, [])
 
     console.log("userData", userData);
-    return <AuthContext.Provider value={{ setUserData, userData }}>
+    return <AuthContext.Provider value={{ setUserData, userData,loading }}>
         {children}
     </AuthContext.Provider>
 }
