@@ -1,7 +1,7 @@
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import React, { useContext, useEffect, useState } from "react";
 import { auth, db } from "../../firebase";
-import { doc, getDoc } from "firebase/firestore";
+import { doc, getDoc, updateDoc } from "firebase/firestore";
 
 // 1. 
 const AuthContext = React.createContext();
@@ -24,28 +24,58 @@ function AuthWrapper({ children }) {
                 const docRef = doc(db, "users", currentUser?.uid);
                 const docSnap = await getDoc(docRef);
                 if (docSnap.exists()) {
-                    const { profile_pic, name, email } = docSnap.data();
+                    const { profile_pic, name, email, lastSeen, status } = docSnap.data();
                     // context me jaake save kr dia hai user ka data
+                    await setLastSeen(currentUser);
+
                     setUserData({
                         id: currentUser.uid,
                         profile_pic,
                         email,
-                        name
+                        name,
+                        lastSeen,
+                        status: status ? status : ""
                     });
-                    console.log("userData Added");
+
                 }
             }
             setLoading(false);
         })
-        return ()=>{
+        return () => {
             unsubscribe()
         }
     }, [])
 
 
+    const setLastSeen = async (user) => {
+        const date = new Date();
+        const timeStamp = date.toLocaleString("en-US", {
+            hour: "numeric",
+            minute: "numeric",
+            hour12: true,
+        });
+        await updateDoc(doc(db, "users", user.uid), {
+            lastSeen: timeStamp,
+        });
+
+
+    }
+
+    const updateName = async (newName) => {
+        await updateDoc(doc(db, "users", userData.id), {
+            name: newName
+        });
+    }
+    const updateStatus = async (newstatus) => {
+        await updateDoc(doc(db, "users", userData.id), {
+            status: newstatus
+        });
+    }
+
+
 
     console.log("userData", userData);
-    return <AuthContext.Provider value={{ setUserData, userData, loading }}>
+    return <AuthContext.Provider value={{ setUserData, userData, loading, updateName, updateStatus }}>
         {children}
     </AuthContext.Provider>
 }
