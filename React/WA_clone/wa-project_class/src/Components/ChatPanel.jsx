@@ -2,7 +2,7 @@ import { collection, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import React from 'react'
 import { db } from "../../firebase";
-import { CircleFadingPlusIcon, Loader2Icon, MessageSquare, UserRoundIcon } from "lucide-react";
+import { CircleFadingPlusIcon, Loader2Icon, MessageSquare, SearchIcon, UserRoundIcon } from "lucide-react";
 import Profile from "./Profile";
 import UserCard from "./userCard";
 import { useAuth } from "./AuthContext";
@@ -13,6 +13,7 @@ function ChatPanel() {
     const [isLoading, setLoading] = useState(true);
     const [showProfile, setShowProfile] = useState(false);
     const { userData } = useAuth();
+    const [searchQuery, setSearchQuery] = useState("");
     useEffect(() => {
         const getUsers = async () => {
             // isme collection pass and data milta hai 
@@ -28,6 +29,15 @@ function ChatPanel() {
     const onBack = () => { setShowProfile(false) }
     if (showProfile == true) {
         return <Profile onBack={onBack} />
+    }
+
+    let filterdUsers = users;
+    
+    if (searchQuery) {
+        // filter chats based on search query
+        filterdUsers = users.filter((user) =>
+            user.userData.name?.toLowerCase()?.includes(searchQuery?.toLowerCase())
+        );
     }
 
 
@@ -56,11 +66,23 @@ function ChatPanel() {
             {/* chat List */}
             {
                 isLoading ? <div className="h-full w-full flex justify-center items-center"><Loader2Icon className="w-10 h-10 animate-spin" /> </div> :
-                    <div className=" divide-y py-4   h-full  max-h-[calc(100vh-152px)] overflow-y-scroll">
-                        {users.map(userObject => <UserCard userObject={userObject} key={userObject.id} />)}
+                    <div className="bg-white py-2 px-3">
+                        <div className="bg-background flex items-center gap-4 px-3 py-2 rounded-lg">
+                            <SearchIcon className="w-4 h-4" />
+                            <input
+                                className="bg-background focus-within:outline-none"
+                                placeholder="Search"
+                                value={searchQuery}
+                                onChange={(e) => setSearchQuery(e.target.value)}
+                            />
+                        </div>
+                        <div className=" divide-y py-4   h-full  max-h-[calc(100vh-152px)] overflow-y-scroll">
+                            {filterdUsers.map(userObject => <UserCard userObject={userObject} key={userObject.id} />)}
+                        </div>
                     </div>
+
             }
-        </div>
+        </div >
 
 
     );
