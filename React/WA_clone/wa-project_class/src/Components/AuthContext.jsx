@@ -18,13 +18,13 @@ function AuthWrapper({ children }) {
     useEffect(() => {
         // check kr rahe ho if you have logged in before
         // kuch bhi change -> yha update ho jaayega 
-        onAuthStateChanged(auth, async (currentUser) => {
+        const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
             setLoading(true);
             if (currentUser) {
                 const docRef = doc(db, "users", currentUser?.uid);
                 const docSnap = await getDoc(docRef);
                 if (docSnap.exists()) {
-                    const {  profile_pic, name, email } = docSnap.data();
+                    const { profile_pic, name, email } = docSnap.data();
                     // context me jaake save kr dia hai user ka data
                     setUserData({
                         id: currentUser.uid,
@@ -37,6 +37,9 @@ function AuthWrapper({ children }) {
             }
             setLoading(false);
         })
+        return ()=>{
+            unsubscribe()
+        }
     }, [])
 
 

@@ -9,7 +9,9 @@ export default {
       colors:{
         primary: "#04a784",
         primaryDense: "#008069",
-        background:"#eff2f5"
+        background:"#eff2f5",
+        "chat-bg": "#F2EFE9",
+        "primary-light": "#D9FDD2"
       }
     },
   },
