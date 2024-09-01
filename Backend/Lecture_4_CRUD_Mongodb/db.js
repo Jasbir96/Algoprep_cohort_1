@@ -191,6 +191,8 @@ const deleteUser = async (req, res) => {
 }
 
 
+
+
 app.use(express.json());
 // middleWare -> user -> object is not empty
 app.post("/user", createUser)
