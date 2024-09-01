@@ -56,6 +56,8 @@ function AuthWrapper({ children }) {
             hour: "numeric",
             minute: "numeric",
             hour12: true,
+            day: "2-digit",
+            month:"short"
         });
         await updateDoc(doc(db, "users", user.uid), {
             lastSeen: timeStamp,
