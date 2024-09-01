@@ -203,6 +203,16 @@ app.delete("/user/:id", deleteUser);
 
 
 
+app.post("/login", loginHandler);
+app.post("/signup", signuphandler);
+
+app.use(protectRoute);
+
+app.get("/profile", profilehandler)
+
+
+
+
 app.listen(3000, function () {
     console.log("Server started on port 3000")
 })
