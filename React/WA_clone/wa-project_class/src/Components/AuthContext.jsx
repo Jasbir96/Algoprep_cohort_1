@@ -1,4 +1,4 @@
-import { onAuthStateChanged } from "firebase/auth";
+import { onAuthStateChanged, signOut } from "firebase/auth";
 import React, { useContext, useEffect, useState } from "react";
 import { auth, db } from "../../firebase";
 import { doc, getDoc } from "firebase/firestore";
@@ -24,13 +24,13 @@ function AuthWrapper({ children }) {
                 const docRef = doc(db, "users", currentUser?.uid);
                 const docSnap = await getDoc(docRef);
                 if (docSnap.exists()) {
-                    const { uid, photoURL, displayName, email } = docSnap.data();
+                    const {  profile_pic, name, email } = docSnap.data();
                     // context me jaake save kr dia hai user ka data
                     setUserData({
-                        id: uid,
-                        profile_pic: photoURL,
+                        id: currentUser.uid,
+                        profile_pic,
                         email,
-                        name: displayName
+                        name
                     });
                     console.log("userData Added");
                 }
@@ -39,8 +39,10 @@ function AuthWrapper({ children }) {
         })
     }, [])
 
+
+
     console.log("userData", userData);
-    return <AuthContext.Provider value={{ setUserData, userData,loading }}>
+    return <AuthContext.Provider value={{ setUserData, userData, loading }}>
         {children}
     </AuthContext.Provider>
 }

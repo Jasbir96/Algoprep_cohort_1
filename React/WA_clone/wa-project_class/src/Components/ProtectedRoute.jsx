@@ -6,7 +6,7 @@ function ProtectedRoute(props) {
     const { userData, loading } = useAuth();
     console.log("user Data", userData);
     if (loading) {
-        return <div className="w-screen h-screen flex items-center justify-center bg-[#eff2f5]">
+        return <div className="w-screen h-screen flex items-center justify-center bg-background">
             <Loader2Icon  className="w-8 h-8 animate-spin"/>
         </div>
     }

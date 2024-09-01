@@ -46,7 +46,7 @@ function Home() {
         accept='image/png image/jpeg image/webp'
         onChange={handleChange}
       ></input> */}
-      <div className="bg-[#eff2f5] w-full h-full shadow-md flex">
+      <div className="bg-background w-full h-full shadow-md flex">
         {/* conditonal rehne waale hai -> chat list , profile */}
         <ChatPanel />
         {/* <div>Empty Chat</div>:<div>Individual CHat</div> */}
