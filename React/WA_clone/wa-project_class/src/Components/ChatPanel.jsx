@@ -19,7 +19,7 @@ function ChatPanel() {
             // isme collection pass and data milta hai 
             const data = await getDocs(collection(db, 'users'));
             const arrayOfUser = data.docs.map((docs) => { return { userData: docs.data(), id: docs.id } });
-            console.log("18", arrayOfUser);
+       
             setUsers(arrayOfUser);
             setLoading(false);
         };
