@@ -1,4 +1,4 @@
-Que : Implement signup , login ,protectRoute and profile
+Que : Implement signup , login ,protectRoute and profile, logout 
 
 Que : **Create a Mongoose schema for a movie database that includes the following fields:**
 
