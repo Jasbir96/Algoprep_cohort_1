@@ -1,19 +1,21 @@
 import { useState } from "react";
 
 function Counter() {
-
+//  state management  -> set
     const [count, setCount] = useState(0);
 
     
     // bussiness logic
     const increment = () => {
+// update
         setCount(count + 1);
     }
     const decrement = () => {
+        // update
         setCount(count - 1);
     }
 
- 
+//  ui
     return <div style={{
         height: "100vh",
         display: "flex",
