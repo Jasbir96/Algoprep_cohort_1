@@ -2,22 +2,21 @@
 import { useSelector } from "react-redux";
 // 
 import { useDispatch } from "react-redux";
-import counterSlice from "../redux/slice/CounterSlice";
+import  { counterActions } from "../redux/slice/CounterSlice";
 
-const actions = counterSlice.actions;
+
 
 function ReduxCounter() {
-    const count = 
-    useSelector((store) => store.counterSection.count)
+    const count =  useSelector((store) => store.counterSection.count)
     
     const dispatch = useDispatch();
     
     const increment = () => {
-        dispatch(actions.increment());
+        dispatch(counterActions.increment());
     }
 
     const decrement = () => {
-        dispatch(actions.decrement());
+        dispatch(counterActions.decrement());
     }
 
 

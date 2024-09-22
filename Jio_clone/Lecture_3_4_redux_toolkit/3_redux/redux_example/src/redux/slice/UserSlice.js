@@ -23,7 +23,8 @@ const userSlice = createSlice({
             state.loading = false;
             state.error = null
         }
-
     }
 })
+const userActions=userSlice.actions;
+export {userActions};
 export default userSlice;

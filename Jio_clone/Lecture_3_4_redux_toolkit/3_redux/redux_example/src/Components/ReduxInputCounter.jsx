@@ -8,7 +8,7 @@ function ReduxInputContainer() {
     const [value, setValue] = useState("");
     const dispatch = useDispatch();
     //  state management  -> (slice)
-    const { count, delta } = useSelector((store) => store.counterInputSlice);
+    const { count } = useSelector((store) => store.counterInputSlice);
 
     // bussiness logic
     const increment = () => {
