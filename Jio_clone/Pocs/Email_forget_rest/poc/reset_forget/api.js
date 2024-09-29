@@ -5,6 +5,7 @@ const dotenv = require("dotenv")
 const cookieParser = require("cookie-parser");
 const UserModel = require("./userModel");
 const emailSender = require("./DynamicEmailSender");
+const { getCurrentMovies, getTopRatedMovies } = require("./controllers/movieController");
 
 dotenv.config(); // env ke variables
 /*****************db connection***************/
@@ -218,8 +219,8 @@ async function resetPasswordHandler(req, res) {
                 message: "otp is incorrect"
             })
         }
-        user.password=resetDetails.password;
-        user.confirmPassword=resetDetails.confirmPassword;
+        user.password = resetDetails.password;
+        user.confirmPassword = resetDetails.confirmPassword;
         // remove the otp from the user
         user.otp = undefined;
         user.otpExpiry = undefined;
@@ -237,6 +238,20 @@ async function resetPasswordHandler(req, res) {
         })
     }
 }
+
+
+
+
+
+// upcomig implemnet
+
+app.get("/api/movies/currentPlaying", getCurrentMovies);
+app.get("/api/movies/topRated", getTopRatedMovies);
+
+
+
+
+
 
 app.post("/api/auth/login", loginHandler);
 app.post("/api/auth/signup", signupHandler);

@@ -23,6 +23,7 @@ const msg = {
 }
 
 const transporter = nodemailer.createTransport(sendGridDetails);
+
 transporter
 .sendMail(msg)
 .then(() => {
