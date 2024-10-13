@@ -1,0 +1,13 @@
+.App {
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+video {
+  max-width: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
