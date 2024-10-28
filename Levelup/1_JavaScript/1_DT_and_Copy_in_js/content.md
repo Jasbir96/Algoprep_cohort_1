@@ -5,7 +5,3 @@
 * Flatten an array 
 * Serialize an object
 * Deep copy an object
-**My questions**
-* implement document functions
-* pipe method
-* addition of two number with string 
