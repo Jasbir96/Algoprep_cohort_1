@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        margin: 0px;
+    }
+
+    html {
+        color: black;
+        font-family: sans-serif;
+
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+    .menus {
+        background-color: lightblue;
+        height: 70px;
+        border: 1px solid red;
+    }
+
+    .formula {
+        background-color: lightgoldenrodyellow;
+        height: 30px;
+        border: 1px solid red;
+    }
+
+    .grid {
+        height: calc(100vh - 120px);
+        background-color: lightgreen;
+        overflow: auto;
+    }
+
+    .sheet {
+        height: 20px;
+        border: 1px solid red;
+        background-color: black;
+        color: white
+    }
+
+    .top-row {
+        height: 1.5rem;
+        display: flex;
+    }
+
+    .top-row>* {
+        height: 100%;
+        border: 1px solid gray
+    }
+    .top_left {
+        background-color: gray;
+        min-width:2rem;
+
+    }
+    .rows_box{
+        display: flex;
+    }
+    .cell{
+        width:4rem;
+        border: 1px solid gray; 
+        text-align: center;
+    }
+
+</style>
+<!-- 
+using dom API grid -> first row -> A to z
+and left column -> 1 to 100
+
+-->
+
+<body>
+    <div class="menus">Menu</div>
+    <div class="formula">Formula</div>
+    <div class="grid">
+        <div class="top-row">
+            <div class="top_left"></div>
+            <div class="rows_box">
+                <div class="cell">A</div>
+                <div class="cell">B</div>
+                <div class="cell">C</div>
+                <div class="cell">D</div>
+                <div class="cell">E</div>
+                <div class="cell">F</div>
+                <div class="cell">G</div>
+                <div class="cell">H</div>
+                <div class="cell">I</div>
+                <div class="cell">J</div>
+                <div class="cell">K</div>
+                <div class="cell">L</div>
+                <div class="cell">J</div>
+                <div class="cell">M</div>
+                <div class="cell">N</div>
+            </div>
+        </div>
+        <div class="top-row">
+            <div class="top_left"></div>
+            <div class="rows_box">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+        </div>
+
+    </div>
+    <div class="sheet"></div>
+
+</body>
+
+</html>

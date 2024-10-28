@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Create User Account</h1>
+    <form>
+        <label for="fullname">Full Name:</label>
+        <input type="text" name="fullname" id="fullname" placeholder="fullname">
+        <br><br>
+
+        <label for="email">Email Address:</label>
+        <input type="email" name="email" id="email">
+        <br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password">
+        <br><br>
+
+        <label for="confirm_password">Confirm Password:</label>
+        <input type="password" name="confirm_password" id="confirm_password">
+        <br><br>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="text" name="dob" id="dob" pattern="\d{4}-\d{2}-\d{2}">
+        <br><br>
+
+        <label for="phone">Phone Number:</label>
+        <input type="text" name="phone" id="phone"
+        pattern="[+][9][1]\d{10}"
+        >
+        <br><br>
+
+        <label for="credit_card">Credit Card Number:</label>
+        <input type="text" name="credit_card" id="credit_card" 
+        pattern="\d{16}">
+        <br><br>
+
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" pattern="^[a-zA-Z0-9]+$">
+        <br><br>
+
+        <label for="website">Website URL </label>
+        <input type="text" name="website" id="website" 
+        pattern="https?://.+">
+        <br><br>
+
+        <button type="submit">Register</button>
+    </form>
+
+
+</body>
+
+</html>

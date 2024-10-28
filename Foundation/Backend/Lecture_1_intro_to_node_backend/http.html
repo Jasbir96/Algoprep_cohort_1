@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="get">GET REquest</button>
+    <button id="post">Post Request</button>
+    <button id="patch">Patch Request</button>
+    <button id="delete">Delete request </button>
+    <button id="getAll">Get All Posts</button>
+    <script>
+        const getBtn = document.querySelector("#get");
+        const postBtn = document.querySelector("#post");
+        const updateBtn = document.querySelector("#patch");
+        const deleteBtn = document.querySelector("#delete");
+        const getAllBtn = document.querySelector("#getAll");
+
+
+
+        // get All posts
+        getAllBtn
+            .addEventListener("click", async function () {
+                //  you want to get something from a servre -> get request 
+                const resp = await fetch('https://dummyjson.com/posts',
+                    {
+                        method: "GET",
+                    })
+
+                const respdata = await resp.json()
+                // -> what is the final status of reponse
+                console.log("status", resp.status);
+                console.log("body", respdata)
+            })
+
+
+
+        //  get  a post from server
+        getBtn
+            .addEventListener("click", async function () {
+                //  you want to get something from a servre -> get request 
+                const resp = await fetch('https://dummyjson.com/posts/1',
+                    {
+                        method: "GET",
+                    })
+
+                const respdata = await resp.json()
+                // -> what is the final status of reponse
+                console.log("status", resp.status);
+                console.log("body", respdata)
+            })
+
+
+        // add a post to server
+        postBtn
+            .addEventListener("click", async function () {
+                //  you want to get something from a servre -> get request 
+                const resp = await fetch('https://dummyjson.com/posts/add',
+                    {
+                        method: "POST",
+                        body: JSON.stringify({
+                            title: 'I am in love with someone.',
+                            userId: 5,
+                        }),
+                        headers: { 'Content-Type': 'application/json' },
+
+                    })
+
+                const respdata = await resp.json()
+                // -> what is the final status of reponse
+                console.log("status", resp.status);
+                console.log("body", respdata)
+            })
+
+        // update something on the server
+
+        updateBtn
+            .addEventListener("click", async function () {
+                //  you want to get something from a servre -> get request 
+                const resp = await /* updating title of product with id 1 */
+                    fetch('https://dummyjson.com/products/1', {
+                        method: 'PATCH',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            title: 'iPhone Galaxy +1'
+                        })
+                    })
+
+                const respdata = await resp.json()
+                // -> what is the final status of reponse
+                console.log("status", resp.status);
+                console.log("body", respdata)
+            })
+
+
+        // delete something from the server
+        deleteBtn
+            .addEventListener("click", async function () {
+                //  you want to get something from a servre -> get request 
+                const resp = await /* updating title of product with id 1 */
+                    fetch('https://dummyjson.com/products/1', {
+                        method: 'DELETE',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            title: 'iPhone Galaxy +1'
+                        })
+                    })
+
+                const respdata = await resp.json()
+                // -> what is the final status of reponse
+                console.log("status", resp.status);
+                console.log("body", respdata)
+            })
+
+
+    </script>
+</body>
+
+</html>

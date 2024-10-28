@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    .parent {
+        height: 30rem;
+        width: 40rem;
+        background-color: rebeccapurple;
+        /* layout ke feature */
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        gap: 2rem;
+
+
+    }
+
+    .child {
+        color: rgb(179, 40, 40);
+        font-size: 2rem;
+        background-color: lightcoral;
+        font-weight: bold;
+        border: 1px solid green;
+        font-family: sans-serif;
+        height: 100px;
+        width: 150px;
+    }
+</style>
+
+<body>
+    <h2>Flexbox Responsive</h2>
+    <div class="parent">
+        <div class="child one"> child </div>
+        <div class="child two ">child</div>
+        <div class="child three"> child</div>
+        <div class="child three"> child</div>
+        <div class="child three"> child</div>
+        <div class="child three"> child</div>
+        <div class="child three"> child</div>
+        <div class="child three"> child</div>
+
+    </div>
+</body>
+
+</html>

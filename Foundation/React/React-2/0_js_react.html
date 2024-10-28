@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>JS For react </h1>
+    <script>
+        // function inner() {
+        //     console.log("I am inner")
+        // }
+        // function outer(innerRef) {
+        //     console.log("I am outer");
+        //     innerRef();
+        // }
+
+
+        // outer(inner);
+
+
+        // let arr = [10, 20, 30, 40, 50];
+        // let newArr = [];
+        // for (let i = 0; i < arr.length; i++) {
+        //     let sqValue = arr[i] * arr[i];
+        //     newArr.push(sqValue);
+        // }
+        // console.log("newArr", newArr);
+
+
+        // let cubeArr = []
+        // for (let i = 0; i < arr.length; i++) {
+        //     let cubeValue = arr[i] * arr[i] * arr[i];
+        //     cubeArr.push(cubeValue);
+        // }
+        // console.log("`````````````````````");
+        // console.log("cubeArr", cubeArr);
+
+
+        // custom map functions
+        // function map(arr, cb) {
+        //     let newArr = [];
+        //     for (let i = 0; i < arr.length; i++) {
+        //         let sqValue = cb(arr[i])
+        //         newArr.push(sqValue);
+        //     }
+        //     return newArr;
+        // }
+
+        // let arr = [10, 20, 30, 40, 50];
+
+        // function squarer(elem) {
+        //     return elem * elem;
+        // }
+
+        // const sqArr = map(arr, squarer);
+        // console.log("sqArr", sqArr);
+
+
+
+        // function cuber(elem) {
+        //     return elem * elem * elem;
+        // }
+        // const cubeArr = map(arr, cuber);
+        // console.log("```````````");
+        // console.log("cubeArr", cubeArr)
+        //*************************** map
+
+        let arr = [10, 20, 30, 40, 50];
+        function cuber(elem) {
+            return elem * elem * elem;
+        }
+        function squarer(elem) {
+            return elem * elem;
+        }
+
+        const sqArr = arr.map(squarer);
+        console.log("sqArr",sqArr);
+        const cubeArr=arr.map(cuber);
+        console.log("cubeArr",cubeArr);
+
+        
+
+    </script>
+
+</body>
+
+</html>

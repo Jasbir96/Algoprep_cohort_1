@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Input Examples</h2>
+    <form action="/amsdbhas">
+        <!-- input -> text -->
+        <label for="nickname">Nick Name:</label>
+        <input type="text" id="nickname" 
+    readonly value="some value"
+        >
+        <label for="name">Name: </label>
+        <input type="text" id="name" 
+        placeholder="my-name">
+        <br>
+        <br>
+        <!-- number -->
+        <label for="my-num">Number: </label>
+        <input type="number" id="my-num" min="10" max="100" step="4" required>
+        <br>
+        <br>
+        <!-- email -->
+        <label for="email">Email: </label>
+        <input type="email" id="email" value="ravi@gmail.com">
+        <br>
+        <br>
+
+        <label for="password">password: </label>
+        <input type="password" id="password" minlength="8" maxlength="14">
+        <br>
+        <br>
+        <input type="submit">
+    </form>
+
+</body>
+
+</html>

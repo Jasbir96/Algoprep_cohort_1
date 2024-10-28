@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <!-- comments -->
+        <label for="comments">Comments</label>
+        <textarea id="comments" cols="20" rows="10"></textarea>
+        <!-- dropdowns -->
+        <br>
+        <br>
+        <label for="drop-down">Laguages</label>
+        <select id="drop-down">
+            <option value="01">Java</option>
+            <option value="02" >C++</option>
+            <option value="03" selected>JS</option>
+        </select>
+
+        <!-- checkbox -->
+        <br>
+        <br>
+        <!-- border  -->
+        <fieldset>
+            <!-- border  -->
+            <legend>click on your choices</legend>
+            <input type="checkbox" id="Coffee" name="beverages" checked>
+            <label for="Coffee">Coffee</label>
+            <input type="checkbox" id="Tea" name="beverages" checked>
+            <label for="Tea">Tea</label>
+        </fieldset>
+
+        <fieldset>
+            <!-- border  -->
+            <legend>Do you agree to our terms and conditions</legend>
+            <input type="radio" id="yes" name="terms" checked>
+            <label for="yes">Yes</label>
+
+            <input type="radio" id="no" name="terms">
+            <label for="no">NO!</label>
+        </fieldset>
+        <br>
+        <br>
+        <input type="submit">
+        <input type="reset">
+        
+        <input type="range" min="100" max="1000" value="200" step="100">
+
+    </form>
+
+</body>
+
+</html>

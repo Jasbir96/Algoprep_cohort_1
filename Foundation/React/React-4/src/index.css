@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+
+html {
+  font-family: sans-serif;
+}
+

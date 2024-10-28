@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- react algorithm -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+
+    <!-- react dom algorithm -->
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- transpiler -> translator  -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<style>
+    * {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+</style>
+
+<body>
+    <h1>JSX example</h1>
+    <div id="root">
+
+    </div>
+    <script type="text/babel">
+        const rootElement = document.getElementById('root');
+
+        // functions that returns -> html
+
+        function Counter() {
+            // create a state for that 
+            const [value, setValue] = React.useState(0);
+            // // jb bhi update -> react 
+            // const value = arr[0];
+            // // the function that is given to you by react
+            // const setValue = arr[1];
+            const handleIncrement = () => {
+                if (value == 10) {
+                    return;
+                }
+                setValue(value + 1);
+            }
+            const handleDecrement = () => {
+                if (value == 0)
+                    return
+                setValue(value - 1);
+            }
+            return <div>
+                <div>{value}</div>
+                <button onClick={handleIncrement}>+ Plus</button>
+                <button onClick={handleDecrement}>- Minus</button>
+            </div>
+
+        }
+
+        // ReactDOM-> 1
+        ReactDOM.render(<Counter></Counter>, rootElement)
+
+    </script>
+</body>
+
+</html>
+

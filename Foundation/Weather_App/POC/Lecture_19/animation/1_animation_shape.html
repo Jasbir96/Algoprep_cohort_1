@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+
+    body {
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .container {
+        height: 500px;
+        width: 500px;
+        background-color: slategray;
+        /* using flex  */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* animation-name: bg-changer; */
+        /* animation-duration: 5s; */
+    }
+
+    .box {
+        height: 100px;
+        width: 100px;
+        background-color: hotpink;
+        animation-name: shape-changer;
+        animation-duration: 4s;
+        animation-iteration-count: 2;
+        animation-fill-mode: forwards;
+        /* animation-delay: 2s; */
+    }
+
+    @keyframes bg-changer {
+        25% {
+            background-color: black;
+        }
+
+        50% {
+            background-color: red;
+        }
+    }
+
+    /* -> noraml styling , journey -> check transition */
+    @keyframes shape-changer {
+        75% {
+            border-radius: 50%;
+        }
+
+        100% {
+            background-color: green;
+        }
+
+    }
+</style>
+
+<body>
+
+    <div class="container">
+        <div class="box"></div>
+    </div>
+</body>
+
+</html>

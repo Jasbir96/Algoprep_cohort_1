@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+             box-sizing: border-box;
+        }
+        h1 {
+            text-align: center;
+            font-family: sans-serif;
+            color: darkorange
+        }
+
+        .box {
+            background-color: lightblue;
+            margin-bottom: 10px;
+            width: 200px;
+            height: 200px;
+
+        }
+
+        .content-box {
+            box-sizing: content-box;
+            padding: 10px;
+            border: 10px solid red;
+        }
+
+        .border-box {
+            box-sizing: border-box;
+            padding: 10px;
+            border: 10px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Box Model Example </h1>
+    <div class="box content-box">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit iste eum nulla placeat eos nam pariatur
+        repellendus blanditiis facilis tempora!
+        lorem100
+    </div>
+
+    <div class="box border-box">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit iste eum nulla placeat eos nam pariatur
+        repellendus blanditiis facilis tempora!
+    </div>
+
+</body>
+
+</html>
+
+<!--
+element 
+height
+    * every element will have it's height given by 
+    the content 
+    * user height  
+
+width
+    Auto : 
+        -> inline -> required width(a, img, span)
+        -> block level -> full width parent
+    userDefined 
+-->
+
+<!--
+  box-sizing: content-box;
+    element width : content width(userDefined Width) + borderL+ bordeR + paddingL + paddingR
+    element height : content height(userDefined Width) +borderT+ borderB + paddingT + paddingR
+
+
+ box-sizing: border-box;
+   content width  :  (userDefined Width) -( borderL+ bordeR + paddingL + paddingR)
+    content height   :(userDefined height) +borderT+ borderB + paddingT + paddingR
+    element width =userDefinedWidth
+    element height =userDefinedheight
+
+    
+-->
