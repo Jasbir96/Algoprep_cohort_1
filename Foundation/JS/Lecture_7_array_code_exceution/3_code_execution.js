@@ -23,7 +23,7 @@
  *  b. code execution starte for global code->
  *       global execution context
  * 3. Execution context -> it excutes in two phases
- *      a.) Execution context createion
+ *      a.) Execution context creation
  *         i.) memory allocation -> hositing
  *              i.) variable -> undefined
  *              ii.) function -> memory allocation in the heap
