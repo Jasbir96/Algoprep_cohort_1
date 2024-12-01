@@ -1,91 +1,10 @@
-async function signupHandler(req, res) {
-    // 3. create the user
-    try {
-        const userObject = req.body;
-        // 1. user -> data get , check email , password
-        if (!userObject.email || !userObject.password) {
-            return res.status(400).json({
-                "message": "required data missing",
-                status: "failure"
-            })
-        }
-        // 2. email se check -> if exist -> already loggedIn 
-        const user = await UserModel.findOne({ email: userObject.email });
-        if (user) {
-            return res.status(400).json({
-                "message": "user is already logged in",
-                status: "success"
-            })
-        }
-        const newUser = await UserModel.create(userObject);
-        // hash the new user password
-        // send a response 
-        res.status(201).json({
-            "message": "user signup successfully",
-            user: newUser,
-            status: "success"
-        })
-
-        // user Email -> verification of there Email Id 
-        // welcome Email 
-    } catch (err) {
-        console.log("err", err);
-        res.status(500).json({
-            message: err.message,
-            status: "failure"
-        })
-    }
-}
-async function loginHandler(req, res) {
-    // email,password -> if exist -> allow login 
-    //  cookies -> JWT -> they will bring back the token -> protected Route
-    try {
-
-        const { email, password } = req.body;
-        const user = await UserModel.findOne({ email });
-        if (!user) {
-            return res.status(404).json({
-                message: "Invalid email or password",
-                status: "failure"
-            })
-        }
-        // hash the password   
-        const areEqual = password == user.password;
-        if (!areEqual) {
-            return res.status(400).json({
-                message: "Invalid email or password",
-                status: "failure"
-            })
-        }
-
-        // token create
-        const authToken = await promisdiedJWTsign({ id: user["_id"] }, process.env.JWT_SECRET_KEY);
-        // // token -> cookies
-        res.cookie("jwt", authToken, {
-            maxAge: 1000 * 60 * 60 * 24,
-            httpOnly: true, // it can only be accessed by the server
-        })
-        // // res send 
-        res.status(200).json({
-            message: "login successfully",
-            status: "success",
-            user: user
-        })
-
-
-
-    } catch (err) {
-        console.log("err", err);
-        res.status(500).json({
-            message: err.message,
-            status: "failure"
-        })
-    }
-}
-
-const otpGenerator = function () {
-    return Math.floor(100000 + Math.random() * 900000);
-}
+const UserModel = require("../model/UserModel");
+const emailSender = require("../utility/DynamicEmailSender");
+const jwt = require("jsonwebtoken");
+const promisify = require("util").promisify;
+const promisifiedJWTSign = promisify(jwt.sign);
+const promisifiedJWTVerify = promisify(jwt.verify);
+const { JWT_SECRET } = process.env;
 
 async function forgetPasswordHandler(req, res) {
     try {
@@ -163,8 +82,7 @@ async function resetPasswordHandler(req, res) {
                 message: "invalid request"
             })
         }
-        const userId = req.params.userId;
-        const user = await UserModel.findById(userId);
+        const user = await UserModel.findOne({ email: req.body.email });
         // if user is not present
         if (user == null) {
             return res.status(404).json({
@@ -215,4 +133,135 @@ async function resetPasswordHandler(req, res) {
 }
 
 
-module.exports = { signupHandler, loginHandler, forgetPasswordHandler, resetPasswordHandler }; 
+async function signupHandler(req, res) {
+    // 3. create the user
+    try {
+        const userObject = req.body;
+        // 1. user -> data get , check email , password
+        if (!userObject.email || !userObject.password) {
+            return res.status(400).json({
+                "message": "required data missing",
+                status: "failure"
+            })
+        }
+        // 2. email se check -> if exist -> already loggedIn 
+        const user = await UserModel.findOne({ email: userObject.email });
+        if (user) {
+            return res.status(400).json({
+                "message": "user is already logged in",
+                status: "success"
+            })
+        }
+        const newUser = await UserModel.create(userObject);
+        // hash the new user password
+        // send a response 
+        res.status(201).json({
+            "message": "user signup successfully",
+            user: newUser,
+            status: "success"
+        })
+
+        // user Email -> verification of there Email Id 
+        // welcome Email 
+    } catch (err) {
+        console.log("err", err);
+        res.status(500).json({
+            message: err.message,
+            status: "failure"
+        })
+    }
+}
+async function loginHandler(req, res) {
+    // email,password -> if exist -> allow login 
+    //  cookies -> JWT -> they will bring back the token -> protected Route
+    try {
+
+        const { email, password } = req.body;
+        const user = await UserModel.findOne({ email });
+        if (!user) {
+            return res.status(404).json({
+                message: "Invalid email or password",
+                status: "failure"
+            })
+        }
+        // hash the password   
+        const areEqual = password == user.password;
+        if (!areEqual) {
+            return res.status(400).json({
+                message: "Invalid email or password",
+                status: "failure"
+            })
+        }
+
+        // token create
+        const authToken = await promisifiedJWTSign({ id: user["_id"] }, process.env.JWT_SECRET_KEY);
+        // // token -> cookies
+        res.cookie("jwt", authToken, {
+            maxAge: 1000 * 60 * 60 * 24,
+            httpOnly: true, // it can only be accessed by the server
+        })
+        // // res send 
+        res.status(200).json({
+            message: "login successfully",
+            status: "success",
+            user: user
+        })
+
+
+
+    } catch (err) {
+        console.log("err", err);
+        res.status(500).json({
+            message: err.message,
+            status: "failure"
+        })
+    }
+}
+
+const otpGenerator = function () {
+    return Math.floor(100000 + Math.random() * 900000);
+}
+const protectRouteMiddleWare = async function (req, res, next) {
+    try {
+        let jwttoken = req.cookies.JWT;
+        if (!jwttoken) throw new Error("UnAuthorized!");
+
+        let decryptedToken = await promisifiedJWTVerify(jwttoken, JWT_SECRET);
+
+        if (decryptedToken) {
+            let userId = decryptedToken.id;
+            // adding the userId to the req object
+            req.userId = userId;
+            console.log("authenticated");
+            next();
+        }
+    } catch (err) {
+        res.status(500).json({
+            message: err.message,
+            status: "failure",
+        });
+    }
+};
+const logoutController = function (req, res) {
+    res.cookie("JWT", "", {
+        maxAge: Date.now(),
+        httpOnly: true,
+        path: "/",
+        sameSite: "None",
+        secure: true,
+    });
+
+    res.status(200).json({
+        status: "success",
+        message: "user logged out ",
+    });
+};
+module.exports = {
+    forgetPasswordHandler,
+    resetPasswordHandler,
+    signupHandler,
+    loginHandler,
+    logoutController,
+    protectRouteMiddleWare,
+
+}

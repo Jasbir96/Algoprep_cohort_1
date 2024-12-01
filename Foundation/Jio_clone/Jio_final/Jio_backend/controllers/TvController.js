@@ -1,8 +1,11 @@
 const { tmdbApi, TMDB_ENDPOINT } = require("../services/tmdb.services.js");
 
-const getActionMovies = async (req, res) => {
+const getActionTvShows = async (req, res) => {
     try {
-        const data = await tmdbApi.get(TMDB_ENDPOINT.fetchActionMovies);
+        const data = await tmdbApi.get(TMDB_ENDPOINT.fetchActionTvShows);
+        data.data.results.forEach((item) => {
+            item["media_type"] = "tv";
+        });
         res.status(200).json({
             status: "success",
             response: data
@@ -15,10 +18,12 @@ const getActionMovies = async (req, res) => {
     }
 };
 
-const getComedyMovies = async (req, res) => {
+const getComedyTvShows = async (req, res) => {
     try {
-        const data = await tmdbApi.get(TMDB_ENDPOINT.fetchComedyMovies);
-
+        const data = await tmdbApi.get(TMDB_ENDPOINT.fetchComedyTvShows);
+        data.data.results.forEach((item) => {
+            item["media_type"] = "tv";
+        });
         res.status(200).json({
             status: "success",
             response: data
@@ -31,10 +36,12 @@ const getComedyMovies = async (req, res) => {
     }
 };
 
-const getHorrorMovies = async (req, res) => {
+const getMysteryTvShows = async (req, res) => {
     try {
-        const data = await tmdbApi.get(TMDB_ENDPOINT.fetchHorrorMovies);
-
+        const data = await tmdbApi.get(TMDB_ENDPOINT.fetchMysteryTvShows);
+        data.data.results.forEach((item) => {
+            item["media_type"] = "tv";
+        });
         res.status(200).json({
             status: "success",
             response: data
@@ -47,10 +54,12 @@ const getHorrorMovies = async (req, res) => {
     }
 };
 
-const getRomanceMovies = async (req, res) => {
+const getDramaTvShows = async (req, res) => {
     try {
-        const data = await tmdbApi.get(TMDB_ENDPOINT.fetchRomanceMovies);
-
+        const data = await tmdbApi.get(TMDB_ENDPOINT.fetchDramaTvShows);
+        data.data.results.forEach((item) => {
+            item["media_type"] = "tv";
+        });
         res.status(200).json({
             status: "success",
             response: data
@@ -63,10 +72,12 @@ const getRomanceMovies = async (req, res) => {
     }
 };
 
-const getAnimeMovies = async (req, res) => {
+const getCrimeTvShows = async (req, res) => {
     try {
-        const data = await tmdbApi.get(TMDB_ENDPOINT.fetchAnimeMovies);
-
+        const data = await tmdbApi.get(TMDB_ENDPOINT.fetchCrimeTvShows);
+        data.data.results.forEach((item) => {
+            item["media_type"] = "tv";
+        });
         res.status(200).json({
             status: "success",
             response: data
@@ -79,17 +90,17 @@ const getAnimeMovies = async (req, res) => {
     }
 };
 
-const getMovieDetails = async (req, res) => {
+const getTvShowDetails = async (req, res) => {
     try {
         const { id } = req.query;
         if (!id) throw new Error("Video Id is not defined.");
-        const details = await tmdbApi.get(TMDB_ENDPOINT.fetchMovieVideos(id));
-
+        const details = await tmdbApi.get(TMDB_ENDPOINT.fetchTvShowVideos(id));
         res.status(200).json({
             status: "success",
             data: details.data,
         });
     } catch (err) {
+        console.log('err: ', err);
         res.status(500).json({
             message: err.message,
             status: "failure",
@@ -98,10 +109,10 @@ const getMovieDetails = async (req, res) => {
 };
 
 module.exports = {
-    getActionMovies,
-    getMovieDetails,
-    getComedyMovies,
-    getHorrorMovies,
-    getRomanceMovies,
-    getAnimeMovies,
+    getActionTvShows,
+    getComedyTvShows,
+    getMysteryTvShows,
+    getDramaTvShows,
+    getCrimeTvShows,
+    getTvShowDetails,
 };
