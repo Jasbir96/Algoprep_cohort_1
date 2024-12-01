@@ -7,7 +7,7 @@ const headers = {
 const imageBASEURL = "https://image.tmdb.org/t/p/original/";
 const tmdbBASEURL = "https://api.themoviedb.org/3/"
 const TMDB_ENDPOINT = {
-    // Home Page
+    // current movies 
     fetchcurrentMovies: "/movie/now_playing",
     fetchTrending: `/trending/all/week`,
     fetchPopular: `/trending/all/week`,
@@ -19,7 +19,7 @@ const TMDB_ENDPOINT = {
     fetchHorrorMovies: `/discover/movie?language=en-US&with_genres=27`,
     fetchRomanceMovies: `/discover/movie?language=en-US&with_genres=10749`,
     fetchAnimeMovies: '/discover/movie?language=en-US&with_genres=16',
-// tv enpoints
+// tv endpoints
     fetchActionTvShows: `/discover/tv?language=en-US&with_genres=10759`,
     fetchComedyTvShows: `/discover/tv?language=en-US&with_genres=35`,
     fetchMysteryTvShows: `/discover/tv?language=en-US&with_genres=9648`,

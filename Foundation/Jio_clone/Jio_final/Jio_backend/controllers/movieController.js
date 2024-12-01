@@ -1,10 +1,9 @@
-const { getMediaList } = require("../utility");
+const { getMediaList,TMDB_ENDPOINT } = require("../utility/utility");
 
 
 async function getCurrentMovies(req, res) {
     // db wala kaaam hora hai 
     const currentMovieList = await getMediaList(TMDB_ENDPOINT.fetchcurrentMovies);
-
     res.status(200).json({
         status: "success",
         message: currentMovieList
