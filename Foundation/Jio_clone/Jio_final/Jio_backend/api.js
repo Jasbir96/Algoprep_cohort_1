@@ -25,11 +25,16 @@ const AuthRouter = require("./Routers/AuthRouter");
 const MovieRouter = require("./Routers/MovieRouter");
 const TvShowsRouter = require("./Routers/TvRouter");
 const DiscoverRouter = require("./Routers/DiscoverRouter");
+const UserRouter = require("./Routers/UserRouter");
+const VideoRouter = require("./Routers/VideoRouter");
+const PaymentRouter = require("./Routers/PaymentRouter");
 app.use("/api/auth", AuthRouter);
 app.use("/api/movies", MovieRouter);
 app.use("/api/tv", TvShowsRouter);
 app.use("/api/discover", DiscoverRouter);
-
+app.use("/api/user", UserRouter);
+app.use("/api/video", VideoRouter);
+app.use("/api/payment", PaymentRouter);
 app.listen(3001, function () {
     console.log("Server started on port 3001");
 })

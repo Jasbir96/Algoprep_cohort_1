@@ -29,7 +29,21 @@ export const ENDPOINT = {
 
 //eextra data 
     getMovieDetails: (id) => `/movies/details?id=${id}`,
-    getTvShowsDetails: (id) => `/tv/details?id=${id}`
+    getTvShowsDetails: (id) => `/tv/details?id=${id}`,
+
+    //user
+     user: "/user",
+    addToWishlist: "/user/wishlist",
+    getWishlist: "/user/wishlist",
+
+
+    //payment
+    payment: "/payment/order",
+    updatePremium: "/payment/update-premium-access",
+
+    // streaming urls
+    fetchAllStreamingVideos: `/video`,
+    fetchStreamingVideo: (id) => `/video?id=${id}`,
 }
 
 
