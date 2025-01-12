@@ -3,17 +3,17 @@ import React, { Suspense } from 'react'
 import { Skeleton } from '../atom/Skeleton';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '../ui/carousel';
 
-async function BannerSection() {
+async function BannerSection({fetcher}) {
   return (
     <Suspense fallback={<BannerSectionFallback/>}>
-      <BannerSectionContent />
+      <BannerSectionContent  fetcher={fetcher}/>
     </Suspense>
   )
 }
 
 
-async function BannerSectionContent() {
-  const data = await getBannerData();
+async function BannerSectionContent({fetcher}) {
+  const data = await fetcher();
   // console.log(data);
   return (
     <Carousel

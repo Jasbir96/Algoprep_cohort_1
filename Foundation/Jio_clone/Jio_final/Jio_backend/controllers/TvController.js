@@ -3,7 +3,7 @@ const { tmdbApi, TMDB_ENDPOINT } = require("../services/tmdb.services.js");
 const getActionTvShows = async (req, res) => {
     try {
         const data = await tmdbApi.get(TMDB_ENDPOINT.fetchActionTvShows);
-        data.data.results.forEach((item) => {
+        data.results.forEach((item) => {
             item["media_type"] = "tv";
         });
         res.status(200).json({
@@ -21,7 +21,7 @@ const getActionTvShows = async (req, res) => {
 const getComedyTvShows = async (req, res) => {
     try {
         const data = await tmdbApi.get(TMDB_ENDPOINT.fetchComedyTvShows);
-        data.data.results.forEach((item) => {
+        data.results.forEach((item) => {
             item["media_type"] = "tv";
         });
         res.status(200).json({
@@ -39,7 +39,7 @@ const getComedyTvShows = async (req, res) => {
 const getMysteryTvShows = async (req, res) => {
     try {
         const data = await tmdbApi.get(TMDB_ENDPOINT.fetchMysteryTvShows);
-        data.data.results.forEach((item) => {
+        data.results.forEach((item) => {
             item["media_type"] = "tv";
         });
         res.status(200).json({
@@ -57,7 +57,7 @@ const getMysteryTvShows = async (req, res) => {
 const getDramaTvShows = async (req, res) => {
     try {
         const data = await tmdbApi.get(TMDB_ENDPOINT.fetchDramaTvShows);
-        data.data.results.forEach((item) => {
+        data.results.forEach((item) => {
             item["media_type"] = "tv";
         });
         res.status(200).json({
@@ -75,7 +75,7 @@ const getDramaTvShows = async (req, res) => {
 const getCrimeTvShows = async (req, res) => {
     try {
         const data = await tmdbApi.get(TMDB_ENDPOINT.fetchCrimeTvShows);
-        data.data.results.forEach((item) => {
+        data.results.forEach((item) => {
             item["media_type"] = "tv";
         });
         res.status(200).json({

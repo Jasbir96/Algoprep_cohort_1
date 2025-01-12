@@ -55,10 +55,6 @@ export const api = axios.create({
 });
 
 
-export async function getBannerData() {
-     const resp = await api.get(ENDPOINT.discoverNowPlaying);
-     const data=resp?.data?.response?.results;
-    return data;
 
-}
+
 
