@@ -35,8 +35,8 @@ app.use("/api/discover", DiscoverRouter);
 app.use("/api/user", UserRouter);
 app.use("/api/video", VideoRouter);
 app.use("/api/payment", PaymentRouter);
-app.listen(3001, function () {
-    console.log("Server started on port 3001");
+app.listen(3010, function () {
+    console.log("Server started on port 3010");
 })
 
 

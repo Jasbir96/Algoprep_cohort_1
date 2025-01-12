@@ -1,4 +1,5 @@
 import React from 'react'
+import { Skeleton } from '../atom/Skeleton'
 
 function CategoriesSection({title,id}) {
   return (
@@ -8,7 +9,7 @@ function CategoriesSection({title,id}) {
           </h2>
           <ul className="flex gap-4 w-full overflow-scroll scrollbar-hide ">
               {new Array(12).fill(0).map((e, index) => (
-                  <div key={index} className="min-w-[200px] h-[300px] rounded-lg bg-red-100" />
+                  <Skeleton key={index} className="min-w-[200px] h-[300px] " />
               ))}
           </ul>
 
