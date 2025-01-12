@@ -1,5 +1,7 @@
 import React, { Suspense } from 'react'
 import { Skeleton } from '../atom/Skeleton'
+import { media } from '@/lib/api';
+import Image from 'next/image';
 
 
 function CategoriesSection({ title, id,fetcher }) {
@@ -12,7 +14,6 @@ function CategoriesSection({ title, id,fetcher }) {
                 <CategoriesContent fetcher={fetcher} />
             </Suspense>
 
-
         </div>
     )
 }
@@ -20,8 +21,15 @@ function CategoriesSection({ title, id,fetcher }) {
 async function CategoriesContent({fetcher}) {
     const data = await fetcher();
     return <ul className="flex gap-4 w-full overflow-scroll scrollbar-hide">
-        {data?.map((item) => {
-            return <li className="min-w-[200px] h-[300px] rounded-lg border-2 border-red-500" key={item.id}>{item.title||item.name}</li>
+        {data?.map((post) => {
+            return <Image
+                src={media(post?.poster_path)}
+                alt=""
+                width={200}
+                height={300}
+                className="min-w-[200px] h-[300px] rounded-lg object-cover"
+                quality={30}
+            />
         })}
     </ul>
 }

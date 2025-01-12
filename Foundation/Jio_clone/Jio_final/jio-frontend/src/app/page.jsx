@@ -23,8 +23,6 @@ export default function Home() {
         const data = resp?.data?.response?.results;
         return data;
       }
-
-
     },
     {
       label: "Upcoming",
