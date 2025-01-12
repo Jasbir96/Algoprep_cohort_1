@@ -16,6 +16,17 @@ async function BannerSection({fetcher}) {
 async function BannerSectionContent({fetcher}) {
   const data = await fetcher();
   // console.log(data);
+  if (!data || data.length === 0) {
+    return (
+      <div className="flex flex-col items-center justify-center w-full h-[500px] py-12">
+        <InboxIcon
+          className="w-32 h-32 text-slate-400 mb-10"
+          strokeWidth={1.2}
+        />
+        <p className="text-lg text-gray-500">No items found.</p>
+      </div>
+    );
+  }
   return (
     <Carousel
       opts={{
