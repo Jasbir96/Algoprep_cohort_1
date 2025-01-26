@@ -1,0 +1,48 @@
+<!-- Q - Use a single event handler(only one element should have event handler attached with it) and do the following:
+On clicking of the color name change the background color of the div.container to the same.  -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Delegation</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {
+            border: 1px solid;
+            height: 10rem;
+            width: 10rem;
+        }
+
+        .box {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="red box">red</div>
+        <div class="blue box">blue</div>
+        <div class="green box">green</div>
+    </div>
+    <script>
+        const container = document.querySelector(".container");
+
+        container.addEventListener("click", function (e) {
+            const classList = e.target.classList;
+            if (classList.length > 1) {
+                const colour = classList[0];
+                container.style.backgroundColor=colour;
+            }
+        })
+    </script>
+</body>
+
+</html>

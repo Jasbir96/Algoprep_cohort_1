@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div[id] {
+
+        border: 1px solid red;
+    }
+
+    #outer_box {
+        height: 10rem;
+        width: 10rem;
+        background-color: lightblue;
+    }
+
+    #inner_box {
+        height: 50%;
+        width: 50%;
+        background-color: lightgreen;
+        margin-top: 10px;
+    }
+
+    #button {
+        margin-top: 3px;
+        background-color: lightsalmon;
+        width: 50%;
+        margin-left: 3px;
+    }
+</style>
+
+<body>
+    <div id="outer_box">
+        <div id="inner_box">
+            <div id="button">Click Me </div>
+        </div>
+    </div>
+    <script>
+        const outerBox = document.querySelector("#outer_box")
+        const innerBox = document.querySelector("#inner_box")
+        const button = document.querySelector("#button");
+        const body = document.body;
+
+        // bubbling phase
+        button.addEventListener("click", function (e) {
+            console.log("Button say's I was clicked",);
+        })
+        innerBox.addEventListener("click", function () {
+            console.log("inner say's I was clicked");
+        })
+        outerBox.addEventListener("click", function () {
+            console.log("outerBox say's I was clicked");
+        })
+        body.addEventListener("click", () => {
+            console.log("body say's I was clicked");
+        })
+
+        /*************cature phase****/
+        button.addEventListener("click", (e) => {
+            console.log("Button was captured");
+              console.log("````````````````````")
+        }, { capture: true });
+
+        innerBox.addEventListener("click", (e) => {
+            console.log("innerBox was captured");
+            // e.stopPropagation();
+            // e.stopImmediatePropagation();
+        }, { capture: true })
+        outerBox.addEventListener("click", (e) => {
+            console.log("outerBox was captured");
+        }, { capture: true })
+
+        document.addEventListener("click", (e) => {
+            console.log("document was captured");
+          
+        }, { capture: true })
+
+
+
+    </script>
+</body>
+
+</html>

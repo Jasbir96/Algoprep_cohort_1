@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            background-color: lightcoral;
+            border: 1px solid green;
+            height: 10rem;
+            width: 10rem;
+            margin-bottom: 5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <label for="input">Focus input: </label>
+    <input type="text" placeholder="name" id="input">
+    <label for="email">Email</label>
+    <input type="email" placeholder="email" id="email">
+
+    <!-- 
+        mouse: click, mousedown, mouseup, dbclick, mouseover, mouseleave
+    keyboard : keyup, keydown, keypress
+    forms: 
+    -->
+    <script>
+        const box = document.querySelector(".box");
+        // box.addEventListener("mouseover", function () {
+        //     box.style.backgroundColor = "yellow";
+        // })
+        // box.addEventListener("mouseleave", function () {
+        //     box.style.backgroundColor = "lightcoral";
+        // })
+        // box.addEventListener("click", function () {
+        //     console.log("I was clicked");
+        // })
+
+        // box.addEventListener("mousedown", function () {
+        //     console.log("I was mousedown");
+        // })
+
+        // box.addEventListener("mouseup", function () {
+        //     console.log("I was mouseup");
+        // })
+        //  box.addEventListener("dblclick", function () {
+        //         console.log("I was doubleclicked");
+        //  })
+
+        /*******key board **/
+        // const input = document.querySelector("input");
+        // // input.addEventListener("keydown", function () {
+        // //     console.log("Key down called");
+        // // })
+        // // input.addEventListener("keyup", function () {
+        // //     console.log("keyup called");
+        // // })
+
+        // input.addEventListener("keypress", function cb(eventObj) {
+        //     console.log("key press was called")
+        //     console.log("key pressed", eventObj.key);
+        // });
+
+        // focus event
+        const textInput = document.querySelector("input[type='text']");
+        const emailInput = document.querySelector("input[type='email']");
+
+        input.addEventListener("focus", () => {
+            console.log("focus")
+            input.style.backgroundColor = "lightcoral"
+        })
+
+        emailInput.addEventListener("focus", () => {
+            console.log("email focus");
+        })
+
+        // blur event
+        input.addEventListener("blur", () => {
+            console.log("blur input");
+            input.style.backgroundColor="white";
+        })
+
+        emailInput.addEventListener("blur", () => {
+            console.log("blur email input");
+        })
+
+    </script>
+</body>
+
+</html>
+
+
+

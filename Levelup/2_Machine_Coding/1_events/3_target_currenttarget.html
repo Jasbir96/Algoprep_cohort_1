@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div[id] {
+
+        border: 1px solid red;
+    }
+
+    #outer_box {
+        height: 10rem;
+        width: 10rem;
+        background-color: lightblue;
+    }
+
+    #inner_box {
+        height: 50%;
+        width: 50%;
+        background-color: lightgreen;
+        margin-top: 10px;
+    }
+
+    #button {
+        margin-top: 3px;
+        background-color: lightsalmon;
+        width: 50%;
+        margin-left: 3px;
+    }
+</style>
+
+<body>
+    <div id="outer_box">
+        <div id="inner_box">
+            <div id="button">Click Me </div>
+        </div>
+    </div>
+    <script>
+        const outerBox = document.querySelector("#outer_box")
+        const innerBox = document.querySelector("#inner_box")
+        const button = document.querySelector("#button");
+        const body = document.body;
+
+
+        button.addEventListener("click", function (e) {
+            console.log("Button say's I was clicked",);
+            console.log("target", e.target)
+            console.log("currtarget", e.currentTarget)
+        })
+        innerBox.addEventListener("click", function (e) {
+            console.log("inner say's I was clicked");
+            console.log("target", e.target)
+            console.log("currtarget", e.currentTarget);
+            // e.stopPropagation(); // it stops bubbling
+            console.log("``````stop propgation`````");
+            // e.stopImmediatePropagation();
+        })
+
+        innerBox.addEventListener("click",function(){
+            console.log("but i will be called");
+        })
+        outerBox.addEventListener("click", function (e) {
+            console.log("outerBox say's I was clicked");
+            console.log("target", e.target)
+            console.log("currtarget", e.currentTarget)
+        })
+        body.addEventListener("click", (e) => {
+            console.log("body say's I was clicked");
+            console.log("target", e.target)
+            console.log("currtarget", e.currentTarget)
+        })
+      
+
+        // event starts from where it has occured and travels to  all of 
+        // its ancestor : event bubbling
+        //  event lifecycle : capture , target, 
+        
+        // in context of a handler function :
+            // e.currentTraget : on which handler function is attached
+            // e.target : on which actual event is called
+
+    // e.propogation and  e.stopImmmediatepropgation
+        // :  both stop bubbling 
+        //e.stopImmediateprogation : it stops the the event to even reach
+        // the same element with a different handler attached to it  with same event
+
+
+    </script>
+</body>
+
+</html>
