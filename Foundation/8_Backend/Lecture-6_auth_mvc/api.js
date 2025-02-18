@@ -210,7 +210,7 @@ app.get("/user", protectRouteMiddleware, isAdminMiddleWare, getAllUser);
 app.get("/user/:id", getUser);
 app.delete("/user/:id", protectRouteMiddleware, deleteUser);
 
-app.listen(3000, function () {
+app.listen(3001, function () {
     console.log("Server started on port 3000")
 })
 

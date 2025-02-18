@@ -43,6 +43,7 @@ async function CategoriesContent({fetcher}) {
                 height={300}
                 className="min-w-[200px] h-[300px] rounded-lg object-cover"
                 quality={30}
+                key={post.id}
             />
         })}
     </ul>
