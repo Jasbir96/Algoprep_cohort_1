@@ -12,20 +12,44 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useState } from "react";
+import { api, ENDPOINT } from "@/lib/api";
+import { useRouter } from "next/navigation";
+import { LucideLoader2 } from "lucide-react";
 
 export default function LoginForm() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
+    const [loading, setLoading] = useState(false);
+    const router = useRouter();
 
     const onSubmit = async () => {
-        alert("onsubmit");
+        try {
+            setLoading(true);
+            const res = await api.post(ENDPOINT.signup, {
+                name: name,
+                email: email,
+                password: password,
+                confirmPassword: confirmPassword,
+            });
+            if (res.data.status === "success") {
+                router.push("/");
+            }
+            if (res.data) {
+                alert("Account Created!");
+            }
+        } catch (err) {
+            console.log("err: ", err);
+            alert("Something went wrong");
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
         <div className="h-screen flex items-center justify-center">
-            <Card className="mx-auto w-full max-w-sm">
+            <Card className=" w-full max-w-sm">
                 <CardHeader>
                     <CardTitle className="text-xl">Sign Up</CardTitle>
                     <CardDescription>
@@ -75,7 +99,9 @@ export default function LoginForm() {
                         </div>
                         <Button onClick={onSubmit} className="w-full">
                             Create an account
-
+                            {loading && (
+                                <LucideLoader2 className="animate-spin ml-2 w-4 h-4" />
+                            )}
                         </Button>
                     </div>
                     <div className="mt-4 text-center text-sm">

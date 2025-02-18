@@ -38,4 +38,10 @@ function Input(className){
     return <input type="text" className={cn(stylingStyling,className)}/>
 }
 ```
+
+
+## How to make an api request
+* loading -> request is send data is still not recieved
+* error -> reqyest is failed
+* data -> you get the data 
   
