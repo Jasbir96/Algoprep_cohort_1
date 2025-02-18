@@ -3,6 +3,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation";
+import ProfileSheet from "../atom/ProfileSheet";
 
 
 
@@ -17,13 +18,13 @@ export const navLinks = [
 export default function Header() {
   //  anything that start with use are hooks 
   const path = usePathname();
-  const activeTabKey=path.split("/")[1];
-
-  
+  const activeTabKey = path.split("/")[1];
 
 
- 
-  return(
+
+
+
+  return (
     <header className="bg-[#0d0e10] py-4 w-full fixed top-0 z-50  border-b-2 border-b-grey">
       <div className="lg:mx-auto mx-2 lg:px-4 flex items-center text-nowrap">
         <div className="flex">
@@ -55,7 +56,7 @@ export default function Header() {
               className={`px-1 py-2 font-medium text-[#b6b8b8] hover:text-white ${activeTabKey === tab.key
                 ? "border-b-2 border-pink-500 text-white"
                 : ""
-              } `}
+                } `}
             >
               {tab.name}
             </Link>
@@ -71,6 +72,7 @@ export default function Header() {
               className=" py-2 bg-transparent  text-white font-medium focus:outline-none text-sm max-w-[150px]"
             />
           </div>
+          <ProfileSheet />
         </div>
       </div>
     </header>
