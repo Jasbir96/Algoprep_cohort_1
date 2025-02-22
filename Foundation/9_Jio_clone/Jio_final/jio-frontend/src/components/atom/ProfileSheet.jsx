@@ -4,10 +4,12 @@ import Image from "next/image";
 import { ChevronRightIcon, ExternalLinkIcon } from "lucide-react";
 import Link from "next/link";
 import { navLinks } from "../section/Header";
+import { useSelector } from "react-redux";
 
 const ProfileSheet = () => {
     const [open, setOpen] = useState(false);
-
+    const userData = useSelector((state) => state.user);
+    console.log("userData", userData)
     const handleClick = async () => {
         console.log("clicked");
     };
@@ -33,16 +35,16 @@ const ProfileSheet = () => {
                         height={40}
                     />
                     <p className="text-xl font-bold capitalize">
-                        Guest
+                        {userData.isLoggedIn ? userData.user.name : "Guest"}
                     </p>
                     <Link
-                        href={"/login"}
+                        href={`${userData.isLoggedIn ? "/" : "/login"}`}
                         className="rounded-full font-medium mt-4 text-base px-4 py-2 bg-pink-600"
                         onClick={() => {
                             setOpen(false);
                         }}
                     >
-                        Login
+                        {userData.isLoggedIn ? "Logout" : "Login"}
                     </Link>
                 </div>
                 <div className="divide-y my-4">

@@ -47,7 +47,7 @@ export default function LoginForm() {
                 alert("Account Created!");
             }
         } catch (err) {
-            console.log("err: ", err.message);
+            console.log("err: ", err.response.data.message);
             alert("Something went wrong");
         } finally {
             setLoading(false);

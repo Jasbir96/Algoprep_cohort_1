@@ -191,6 +191,7 @@ async function loginHandler(req, res) {
             })
         }
         // hash the password   
+        console.log(password,user.password)
         const areEqual = password == user.password;
         if (!areEqual) {
             return res.status(400).json({
