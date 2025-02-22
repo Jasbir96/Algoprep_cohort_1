@@ -97,7 +97,7 @@ const getTvShowDetails = async (req, res) => {
         const details = await tmdbApi.get(TMDB_ENDPOINT.fetchTvShowVideos(id));
         res.status(200).json({
             status: "success",
-            data: details.data,
+            data: details,
         });
     } catch (err) {
         console.log('err: ', err);

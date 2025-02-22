@@ -60,5 +60,10 @@ export const api = axios.create({
 
 
 
+export function getWatchUrl(vidId, mediaType) {
+    const prefix = mediaType === "tv" ? "tv" : "movies";
+    return `${prefix}/watch?id=${vidId}`;
+}
+
 
 

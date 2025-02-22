@@ -87,7 +87,7 @@ const getMovieDetails = async (req, res) => {
 
         res.status(200).json({
             status: "success",
-            data: details.data,
+            data: details,
         });
     } catch (err) {
         res.status(500).json({
