@@ -17,6 +17,7 @@
     "express": "^4.21.1",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.8.3",
+    "morgan": "^1.10.0",
     "nodemailer": "^6.9.16",
     "razorpay": "^2.9.5",
     "sendgrid": "^5.2.3"

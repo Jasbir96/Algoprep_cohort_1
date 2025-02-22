@@ -4,6 +4,7 @@ const app = express();
 const dotenv = require("dotenv")
 const cookieParser = require("cookie-parser");
 const cors=require("cors");
+const morgan=require("morgan")
 
 
 dotenv.config(); // env ke variables
@@ -21,6 +22,7 @@ mongoose.connect(dbLink)
 // middleWare -> user -> object is not empty
 app.use(express.json());
 app.use(cookieParser());
+app.use(morgan("dev"));
 const corsConfig = {
     origin: true,
     credentials: true,

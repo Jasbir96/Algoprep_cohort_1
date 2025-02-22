@@ -134,8 +134,10 @@ async function resetPasswordHandler(req, res) {
 
 
 async function signupHandler(req, res) {
+  
     // 3. create the user
     try {
+       
         const userObject = req.body;
         // 1. user -> data get , check email , password
         if (!userObject.email || !userObject.password) {
@@ -144,14 +146,18 @@ async function signupHandler(req, res) {
                 status: "failure"
             })
         }
+     
+        
         // 2. email se check -> if exist -> already loggedIn 
         const user = await UserModel.findOne({ email: userObject.email });
         if (user) {
             return res.status(400).json({
-                "message": "user is already logged in",
-                status: "success"
+                "message": "user is already signed  up",
+                status: "failure"
             })
         }
+
+        
         const newUser = await UserModel.create(userObject);
         // hash the new user password
         // send a response 
