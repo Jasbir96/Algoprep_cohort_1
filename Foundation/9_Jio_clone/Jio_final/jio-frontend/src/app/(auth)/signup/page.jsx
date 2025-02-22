@@ -15,6 +15,8 @@ import { useState } from "react";
 import { api, ENDPOINT } from "@/lib/api";
 import { useRouter } from "next/navigation";
 import { LucideLoader2 } from "lucide-react";
+import { useDispatch } from "react-redux";
+import { userLoggedInDetails } from "@/redux/userSlice";
 
 export default function LoginForm() {
     const [name, setName] = useState("");
@@ -23,6 +25,7 @@ export default function LoginForm() {
     const [confirmPassword, setConfirmPassword] = useState("");
     const [loading, setLoading] = useState(false);
     const router = useRouter();
+    const dispatch = useDispatch();
 
     const onSubmit = async () => {
         try {
@@ -34,12 +37,12 @@ export default function LoginForm() {
                 password: password,
                 confirmPassword: confirmPassword,
             });
-
             if (res.data.status === "success") {
+                dispatch(userLoggedInDetails(res.data.user));
                 router.push("/");
-            }else{
-                console.log("message",res.data.message);
-            } 
+            } else {
+                console.log("message", res.data.message);
+            }
             if (res.data) {
                 alert("Account Created!");
             }

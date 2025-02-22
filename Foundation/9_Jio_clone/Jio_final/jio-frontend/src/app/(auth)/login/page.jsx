@@ -16,12 +16,15 @@ import Link from "next/link";
 import { api, ENDPOINT } from "@/lib/api";
 import { LucideLoader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { useDispatch } from "react-redux";
+import { userLoggedInDetails } from "@/redux/userSlice";
 
 export default function LoginPage() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState("");
     const router = useRouter();
+    const dispatch = useDispatch();
 
     const onSubmit = async () => {
         try {
@@ -35,13 +38,17 @@ export default function LoginPage() {
                 password: password,
             });
             if (res.data.status === "success") {
+                dispatch(userLoggedInDetails(res.data.user));
+                // i am logged in
+
+
                 // do whatever you want
                 router.push("/");
             }
         } catch (err) {
             console.log("err: ", err);
             alert("Invalid creds");
-        }finally{
+        } finally {
             setLoading(false);
 
         }

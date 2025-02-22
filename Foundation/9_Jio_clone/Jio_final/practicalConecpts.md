@@ -1,4 +1,7 @@
-## Shadcn (ui-libarary)
+
+
+## Common Components
+### Shadcn (ui-libarary) 
 
 ### components
 **Carousel** : is a component that  rotates on a button click
@@ -45,3 +48,45 @@ function Input(className){
 * error -> reqyest is failed
 * data -> you get the data 
   
+
+## Redux flow in nextjs 
+### Installation
+* npm install @reduxjs/toolkit
+* npm install react-redux
+
+
+### slice
+* object
+   * user -> null
+   * isLoggedin -> false
+* reducer 
+  * login
+  * logout
+
+## store
+```js
+export const makeStore = () => {
+    return configureStore({
+        reducer: {
+            user: userReducer
+        }
+    })
+}
+```
+### store Provider
+```jsx
+import { useRef } from "react";
+import { Provider } from "react-redux";
+import { makeStore } from "../redux/store";
+
+export default function StoreProvider({ children }) {
+    const storeRef = useRef();
+    if (!storeRef.current) {
+        storeRef.current = makeStore();
+    }
+    return <Provider store={storeRef.current}>{children}</Provider>;
+}
+```
+
+
+### now pass the store to outermost layout
