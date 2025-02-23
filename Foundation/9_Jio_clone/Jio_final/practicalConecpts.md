@@ -16,6 +16,7 @@
 			* cardDescription
 		* cardContent
 		* cardFooter
+* Dialog
   
 ## Variants
 * You can have pre-defined styling to promote resuability 
