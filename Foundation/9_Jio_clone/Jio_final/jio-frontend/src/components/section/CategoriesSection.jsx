@@ -53,7 +53,7 @@ async function CategoriesContent({ fetcher }) {
     </ul>
 }
 
-function CategoriesFallback() {
+export function CategoriesFallback() {
     return (
         <ul className="flex gap-4 w-full overflow-scroll scrollbar-hide ">
             {new Array(12).fill(0).map((e, index) => (
