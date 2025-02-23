@@ -2,6 +2,8 @@
 
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { toast } from "sonner"
+
 import {
     Card,
     CardContent,
@@ -35,7 +37,7 @@ export default function LoginPage() {
     const onSubmit = async () => {
         try {
             if (!email || !password) {
-                alert("Please fill the fields");
+                toast("Please fill the fields");
                 return;
             }
             setLoading(true);
@@ -53,7 +55,7 @@ export default function LoginPage() {
             }
         } catch (err) {
             console.log("err: ", err.response.data.message);
-            alert("Invalid creds");
+            toast("Invalid creds");
         } finally {
             setLoading(false);
 

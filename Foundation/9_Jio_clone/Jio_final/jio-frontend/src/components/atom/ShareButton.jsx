@@ -3,6 +3,7 @@ import React from "react";
 
 import { Share2Icon } from "lucide-react";
 import { Button } from "../ui/button";
+import { toast } from "sonner";
 
 const ShareButton = () => {
     const handleShare = () => {
@@ -12,11 +13,11 @@ const ShareButton = () => {
         navigator.clipboard
             .writeText(url)
             .then(() => {
-                alert("URL copied to the clipboard");
+                toast("URL copied to the clipboard");
             })
             .catch((err) => {
                 console.error("Failed to copy: ", err);
-                alert("failed to copy url");
+                toast("failed to copy url");
             });
     };
     return (

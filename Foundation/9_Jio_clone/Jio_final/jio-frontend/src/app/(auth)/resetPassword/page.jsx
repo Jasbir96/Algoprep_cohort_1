@@ -14,6 +14,7 @@ import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { api, ENDPOINT } from "@/lib/api";
 import { LucideLoader2 } from "lucide-react";
+import { toast } from "sonner";
 
 
 function ResetPassword() {
@@ -34,10 +35,10 @@ function ResetPassword() {
         try {
             const res = await api.patch(ENDPOINT.forgetpassword, { email });
             if (res.data.status === "success") {
-                alert("OTP sent successfully!");
+                toast("OTP sent successfully!");
                 setShowDialog(true)
             } else {
-                alert("Failed to send OTP. Try Again");
+                toast("Failed to send OTP. Try Again");
             }
         } catch (err) {
             if (err?.response?.data?.message === "no user with this email id found") {
@@ -57,12 +58,12 @@ function ResetPassword() {
             confirmNewPassword.length === 0 ||
             otp.length == 0
         ) {
-            alert("Please fill all fields");
+            toast("Please fill all fields");
             setLoading(false);
             return;
         }
         if (newPassword !== confirmNewPassword) {
-            alert("New password and Confirm password do not match");
+            toast("New password and Confirm password do not match");
             setLoading(false);
             return;
         }
@@ -76,17 +77,17 @@ function ResetPassword() {
             });
 
             if (res.data.status === "success") {
-                alert("Password reset successfully!");
+                toast("Password reset successfully!");
                 setShowDialog(false);
                 router.push("/login");
             } else {
-                alert("Failed to reset password. Try Again");
+                toast("Failed to reset password. Try Again");
             }
         } catch (err) {
             if (err.response.data.message === "otp is not found or wrong") {
-                alert("Invalid OTP");
+                toast("Invalid OTP");
             } else {
-                alert("Error resetting password");
+                toast("Error resetting password");
                 console.error("Error resetting password:", err);
             }
         } finally {
