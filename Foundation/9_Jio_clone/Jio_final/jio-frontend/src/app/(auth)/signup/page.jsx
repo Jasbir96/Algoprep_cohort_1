@@ -26,6 +26,9 @@ export default function LoginForm() {
     const [loading, setLoading] = useState(false);
     const router = useRouter();
     const dispatch = useDispatch();
+    if (userData.isLoggedIn) {
+        return router.push("/");
+    }
 
     const onSubmit = async () => {
         try {

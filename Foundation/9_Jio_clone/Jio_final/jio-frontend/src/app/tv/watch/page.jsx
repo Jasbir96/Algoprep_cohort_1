@@ -6,8 +6,10 @@ import { api, ENDPOINT } from "@/lib/api";
 import { FilmIcon } from "lucide-react";
 import Link from "next/link";
 import React from "react";
-const page = async ({ searchParams: { id } }) => {
+const page = async ({ searchParams: { id,poster_path } }) => {
     const details = (await api.get(ENDPOINT.getTvShowsDetails(id))).data.data.results?.[0];
+    console.log("posterpath",poster_path)
+
     return (
         <div className="mt-[80px]">
             {details ? (
@@ -19,7 +21,14 @@ const page = async ({ searchParams: { id } }) => {
                     />
                     <div className="flex flex-wrap gap-4 px-4 lg:px-10 py-8 items-center">
                         <h1 className="text-2xl font-bold">{details.name}</h1>
-                        <WishlistButton />
+                        <WishlistButton
+                            wishlist={{
+                                id: details.id,
+                                name: details.name,
+                                media_type: details.media_type || "tv",
+                                poster_path:poster_path
+                            }}
+                        />
                     </div>
                 </>
             ) : (

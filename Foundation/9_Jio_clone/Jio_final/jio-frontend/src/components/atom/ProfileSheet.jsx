@@ -9,7 +9,6 @@ import { useSelector } from "react-redux";
 const ProfileSheet = () => {
     const [open, setOpen] = useState(false);
     const userData = useSelector((state) => state.user);
-    console.log("userData", userData)
     const handleClick = async () => {
         console.log("clicked");
     };
