@@ -5,6 +5,7 @@ import Footer from "@/components/section/Footer";
 import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 import StoreProvider from "@/providers/StoreProvider";
+import AuthProvider from "@/providers/AuthProvider";
 
 
 
@@ -21,9 +22,11 @@ export default function RootLayout({ children }) {
         className={`${inter.className} antialiased`}
       >
         <StoreProvider>
-          <Header />
-          {children}
-          <Footer />
+          <AuthProvider>
+            <Header />
+            {children}
+            <Footer />
+          </AuthProvider>
         </StoreProvider>
 
       </body>

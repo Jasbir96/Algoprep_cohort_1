@@ -1,3 +1,5 @@
+const UserModel = require("../model/UserModel");
+
 const getCurrentUser = async (req, res) => {
     try {
         const userId = req.userId;

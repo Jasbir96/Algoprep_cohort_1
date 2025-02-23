@@ -4,7 +4,8 @@ const jwt = require("jsonwebtoken");
 const promisify = require("util").promisify;
 const promisifiedJWTSign = promisify(jwt.sign);
 const promisifiedJWTVerify = promisify(jwt.verify);
-const { JWT_SECRET } = process.env;
+const { JWT_SECRET_KEY } = process.env;
+
 
 async function forgetPasswordHandler(req, res) {
     try {
@@ -230,10 +231,10 @@ const otpGenerator = function () {
 }
 const protectRouteMiddleWare = async function (req, res, next) {
     try {
-        let jwttoken = req.cookies.JWT;
+        let jwttoken = req.cookies.jwt;
         if (!jwttoken) throw new Error("UnAuthorized!");
 
-        let decryptedToken = await promisifiedJWTVerify(jwttoken, JWT_SECRET);
+        let decryptedToken = await promisifiedJWTVerify(jwttoken, JWT_SECRET_KEY);
 
         if (decryptedToken) {
             let userId = decryptedToken.id;
