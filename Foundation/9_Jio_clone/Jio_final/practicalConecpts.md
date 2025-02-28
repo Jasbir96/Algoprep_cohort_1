@@ -93,4 +93,37 @@ export default function StoreProvider({ children }) {
 ### now pass the store to outermost layout
 
 
+
+
+
+
+## Testing 
+
+**Unit Testing** 
+**Common libs**
+* test Runner : `jest`
+* to compiler of these test : `babel` 
+* depending upon w certain action  you want to peform in isolation : ``
+
+### frontend
+* list of requirement  -> tescase (test runner) : `jest`
+* test-file unrestand :  `babel` 
+* rendering , events , element select in isolation : `react-testing-lib`
+
+**Installation**
+
+1. install these libs
+```bash
+npm install --save-dev jest jest-environment-jsdom @testing-library/react @testing-library/jest-dom
+npm install --save-dev @babel/preset-env @babel/preset-react babel-jest
 ```
+2. babel.config.js
+  
+
+
+
+
+
+### backned 
+* list of requirement  -> tescase (test runner) : `jest`
+* test-file unrestand :  `babel` 
