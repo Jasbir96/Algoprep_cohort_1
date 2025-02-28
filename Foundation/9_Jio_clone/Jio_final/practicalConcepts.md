@@ -99,6 +99,11 @@ export default function StoreProvider({ children }) {
 
 ## Testing 
 
+**test Driven Development**  : before doing dev -> you write testcase and then you write the component making sure it passes
+all the testcases. 
+
+
+
 **Unit Testing** 
 **Common libs**
 * test Runner : `jest`
@@ -117,9 +122,48 @@ export default function StoreProvider({ children }) {
 npm install --save-dev jest jest-environment-jsdom @testing-library/react @testing-library/jest-dom
 npm install --save-dev @babel/preset-env @babel/preset-react babel-jest
 ```
-2. babel.config.js
+2. create babel.config.js and ad the below code 
   
+```js
+  module.exports = {
+  presets: [
+    ['@babel/preset-env', { targets: { node: 'current' } }],
+    '@babel/preset-react',
+  ],
+}; 
+```
 
+3. create jest.config.js
+   
+  ```js
+  module.exports = {
+    testEnvironment: 'jest-environment-jsdom',
+    setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+    moduleNameMapper: {
+        '^@/(.*)$': '<rootDir>/src/$1',
+    },
+    transform: {
+        '^.+\\.(js|jsx)$': 'babel-jest',
+    },
+    testMatch: ['**/*.test.js', '**/*.test.jsx'],
+    moduleDirectories: ['node_modules', '<rootDir>'],
+}; 
+```
+4.  create jest.setup.js
+   ```js
+   // Import Jest DOM matchers
+import '@testing-library/jest-dom';
+
+// Import React Testing Library's custom matchers
+import '@testing-library/jest-dom';
+   ```
+
+5. inside package.json script object append these two commands
+   ```js
+   "test": "jest",
+    "test:watch": "jest --watch"
+
+   ```
 
 
 

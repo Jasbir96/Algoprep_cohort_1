@@ -26,8 +26,10 @@ const WishlistButton = ({ wishlist }) => {
         }
     }
     return (
-        <Button className={`sm:ml-auto ${loading ? "cursor-not-allowed" : "cursor-pointer"}`} onClick={addToWishList}>
-            {loading ? <LoaderPinwheel className="w-4 h-4 mr-2" /> : <PlusIcon className="w-4 h-4 mr-2" />}
+        <Button 
+        data-testid="watchlist"
+        className={`sm:ml-auto ${loading ? "cursor-not-allowed" : "cursor-pointer"}`} onClick={addToWishList}>
+            {loading ? <LoaderPinwheel data-testid="loading-icon" className="w-4 h-4 mr-2" /> : <PlusIcon className="w-4 h-4 mr-2" />}
             Watchlist
         </Button>
     );
