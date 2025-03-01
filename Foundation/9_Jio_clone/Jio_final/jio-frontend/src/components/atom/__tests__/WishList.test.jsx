@@ -8,9 +8,9 @@
 // toast
 
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
-import { useSelector } from "react-redux";
 import WishlistButton from "../WishListButton";
 import React from "react";
+import { useSelector } from "react-redux";
 import { toast } from "sonner"
 import { api } from "@/lib/api";
 
@@ -35,13 +35,14 @@ jest.mock("@/lib/api", () => ({
 
 
 describe("WishList Button", () => {
-    const mockWishlist = { contentId: "123", contentType: "movie" };
+const mockWishlist = { contentId: "123", contentType: "movie" };
 // clear befor
     beforeEach(() => {
         jest.clearAllMocks();
     });
 
     it("logged out render", () => {
+        // secenario create 
         useSelector.mockReturnValue({ isLoggedIn: false });
         // it should return empty component
         // no button nothing
@@ -73,7 +74,6 @@ describe("WishList Button", () => {
         );
         // when clicked :
         render(<WishlistButton wishlist={mockWishlist} />);
-
         const button = screen.queryByTestId('watchlist');
         fireEvent.click(button);
         // Check for loading icon using testid

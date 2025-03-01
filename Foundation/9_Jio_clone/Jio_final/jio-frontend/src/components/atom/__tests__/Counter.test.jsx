@@ -56,7 +56,7 @@ describe("counter", () => {
     it("plus is working", () => {
         // render
         render(<Counter />)
-        // select
+        // select+ation
         const plusButton = screen.getByTestId("plusButton");
         //event 
         fireEvent.click(plusButton);

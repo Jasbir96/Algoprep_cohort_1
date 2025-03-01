@@ -150,6 +150,7 @@ npm install --save-dev @babel/preset-env @babel/preset-react babel-jest
 }; 
 ```
 4.  create jest.setup.js
+  
    ```js
    // Import Jest DOM matchers
 import '@testing-library/jest-dom';
@@ -165,9 +166,35 @@ import '@testing-library/jest-dom';
 
    ```
 
+**Steps to write a unit testcase in react**
+* write 
+  * a test suite : describe
+  * write all the possible **testecases** : using it
+  * mock all the dependecies 
+  * at the start clear all the mocks 
+* inside a testcase there could two pattern
+  * initial render check : render , select  , verify 
+  * other cases : return mock values(if external dependecy) ,render, select , fireEvent , verify 
 
-
-
-### backned 
+### backend  
 * list of requirement  -> tescase (test runner) : `jest`
-* test-file unrestand :  `babel` 
+* feature to test route : `supertest`
+ 
+
+
+
+#### commands
+
+```bash
+  npm install --save-dev jest supertest
+```
+
+**Steps to write a unit testcase in backend**
+* write 
+  * a test suite : describe
+  * write all the possible testecases : using it
+  * mock all the dependecies ****
+  * at the start clear all the mocks 
+* inside a testcase there could two pattern
+  * initial render check : call method, select  , verify 
+  * other cases : return mock values(if external dependecy) ,call method, select  , verify 

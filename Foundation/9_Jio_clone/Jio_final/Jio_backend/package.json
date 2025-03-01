@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "main": "api.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon api.js"
+   "dev": "NODE_ENV=development nodemon api.js",
+    "test": "NODE_ENV=test jest",
+    "start": "NODE_ENV=production node api.js",
+     "test:watch": "NODE_ENV=test jest  --watch"
   },
   "keywords": [],
   "author": "",
@@ -21,5 +23,18 @@
     "nodemailer": "^6.9.16",
     "razorpay": "^2.9.5",
     "sendgrid": "^5.2.3"
-  }
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
+  },
+   "jest": {
+     "testEnvironment": "node",
+     "coveragePathIgnorePatterns": [
+       "/node_modules/"
+     ],
+     "setupFilesAfterEnv": [
+       "<rootDir>/jest.setup.js"
+     ]
+   }
 }
