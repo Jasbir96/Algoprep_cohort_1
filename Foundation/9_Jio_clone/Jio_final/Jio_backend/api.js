@@ -5,14 +5,27 @@ const dotenv = require("dotenv")
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const morgan = require("morgan")
+const mongoSanatize = require("express-mongo-sanitize");
+const helmet = require("helmet");
+const rateLimiter = require("express-rate-limit");
 
 dotenv.config();
 
+const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    limit: 100, // Limit each IP to 100 requests per `window` (here, per 15 minutes).
+    standardHeaders: 'draft-8', // draft-6: `RateLimit-*` headers; draft-7 & draft-8: combined `RateLimit` header
+    legacyHeaders: false, // Disable the `X-RateLimit-*` headers.
+    // store: ... , // Redis, Memcached, etc. See below.
+})
+
 // Middleware setup
+app.use(limiter)
 app.use(express.json());
 app.use(cookieParser());
 app.use(morgan("dev"));
-
+app.use(mongoSanatize());
+app.use(helmet());
 const corsConfig = {
     origin: true,
     credentials: true,
@@ -54,11 +67,11 @@ async function startServer() {
     // Define ports
     const PORT = process.env.NODE_ENV === 'test' ? 5000 : 3000;
 
-   
-   
-        app.listen(PORT, () => {
-            console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`);
-        });
+
+
+    app.listen(PORT, () => {
+        console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`);
+    });
 }
 
 // Start server if not being required by another module (like tests)

@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "main": "api.js",
   "scripts": {
-   "dev": "NODE_ENV=development nodemon api.js",
+    "dev": "NODE_ENV=development nodemon api.js",
     "test": "NODE_ENV=test jest",
     "start": "NODE_ENV=production node api.js",
-     "test:watch": "NODE_ENV=test jest  --watch"
+    "test:watch": "NODE_ENV=test jest  --watch"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +17,9 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.8.3",
     "morgan": "^1.10.0",
@@ -28,13 +31,13 @@
     "jest": "^29.7.0",
     "supertest": "^7.0.0"
   },
-   "jest": {
-     "testEnvironment": "node",
-     "coveragePathIgnorePatterns": [
-       "/node_modules/"
-     ],
-     "setupFilesAfterEnv": [
-       "<rootDir>/jest.setup.js"
-     ]
-   }
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/jest.setup.js"
+    ]
+  }
 }

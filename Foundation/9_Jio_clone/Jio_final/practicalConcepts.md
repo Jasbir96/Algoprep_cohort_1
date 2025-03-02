@@ -18,7 +18,7 @@
 		* cardFooter
 * Dialog
   
-## Variants
+### Variants
 * You can have pre-defined styling to promote resuability 
 * steps
   * use a  library  : import { cva } from "class-variance-authority";
@@ -28,7 +28,7 @@
     *  default Varaiants
  *  usage : use the component pass varaiant with it's value
 
-## Modifying styling 
+### Modifying styling 
 * you can modify styling by accepting className use a this utility -> pro
 ```js
 import { clsx } from "clsx";
