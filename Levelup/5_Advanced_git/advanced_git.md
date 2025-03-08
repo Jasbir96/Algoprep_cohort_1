@@ -32,13 +32,25 @@ git commit --amend --no-edit  # Keeps the existing message
 * list of all the  branches :  `git branch -a`
 * list of all the  branches remote :  `git branch`
 
-
 ### creating pull request
 * you get the link when you push the code to remote 
 * you can go to remote repo and then create  a pull request
 
-### Squash a commit 
-1. soft reset 
+#### Squash a commit  for a PR
+1. soft reset till the last commit  of the barnch where you want to merge your code 
+2. create a new commit with all the changes
+3. push the commit forcefully: `git push origin <branch-name> -f`  
+
+### how to rollback a commit from a branch
+1. if your current branch has some  changes : `git stash` 
+2. switch to that branch  form where release happend : `git checkout <branch-name>` 
+3. take a pull from remote of that  branch : `git pull origin <release-branch-name>`
+4. git reset soft last commit assuming you are sqaushing all the PRS changes 
+5. push that change forcefully
+
+
+
+
 
 
 
