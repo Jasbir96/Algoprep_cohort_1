@@ -1,5 +1,7 @@
 **log**
   * modifier : git log --online  
+  * git status : 
+  * git diff :
 
 ## undoing things
 
@@ -15,7 +17,7 @@ git commit --amend --no-edit  # Keeps the existing message
 ```
 **Note** : it replaces the last commit with new commmit id so should used only when the last commit is not pushed to remote
 
-### Deletion of a commit
+### Deletion of a **commit**
 * Delete commits while keeping the content : `git reset HEAD~<noofcommits> --soft`
 * Delete commits without keeping the content : `git reset HEAD~<noofcommits> --hard` 
 **Note** : Possible ways to recover changes
@@ -23,4 +25,20 @@ git commit --amend --no-edit  # Keeps the existing message
 * you can use `reflog` to access changes made by recent commands 
 ## Branching 
 * create and switch to a branch  : `git checkout -b <branch-name>`
-* push a code  to a branch
+* push your local commit from your branch to the  remote branch : `git push origin <branch-name>`
+* rename a the current branch : `git branch -m <new-name>`
+### listing of branches
+* list of local branches :  `git branch`
+* list of all the  branches :  `git branch -a`
+* list of all the  branches remote :  `git branch`
+
+
+### creating pull request
+* you get the link when you push the code to remote 
+* you can go to remote repo and then create  a pull request
+
+### Squash a commit 
+1. soft reset 
+
+
+
