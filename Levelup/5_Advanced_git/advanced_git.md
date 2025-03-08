@@ -37,9 +37,22 @@ git commit --amend --no-edit  # Keeps the existing message
 * you can go to remote repo and then create  a pull request
 
 #### Squash a commit  for a PR
-1. soft reset till the last commit  of the barnch where you want to merge your code 
-2. create a new commit with all the changes
-3. push the commit forcefully: `git push origin <branch-name> -f`  
+0. push you code to remote of the current branch
+1. soft reset till the last commit  of the barnch where you want to merge your code
+2. stash your changes
+3. take pull from the branch where you want to merge you changes
+4. git stash pop 
+5. create a new commit with all the changes
+6. push the commit forcefully: `git push origin <branch-name> -f` 
+  
+## Stash 
+* it used to store code in a completely seperate area that is not affected by nay changes 
+  to any branch 
+* `git stash` : store your  change into temp area
+* `git stash pop` : remove the latest stash and add to staging area of your branch
+* `git stash apply ` : keep the copy in stash and also add to the staging area of that branch
+
+ 
 
 ### how to rollback a commit from a branch
 1. if your current branch has some  changes : `git stash` 
