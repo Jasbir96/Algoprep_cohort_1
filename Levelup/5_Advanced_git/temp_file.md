@@ -1,1 +1,1 @@
-i am a temp file from feature-1
+i am a temp file from feature-2
