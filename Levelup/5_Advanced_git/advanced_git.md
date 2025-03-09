@@ -63,6 +63,11 @@ git commit --amend --no-edit  # Keeps the existing message
 
 
 
+## Cherry-pick
+* it is used to selectovely copy commits from another branch to a branch 
+### usecase 
+* selective feature release 
+* bug fixes
 
 
 
