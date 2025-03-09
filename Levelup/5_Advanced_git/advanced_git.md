@@ -71,4 +71,11 @@ git commit --amend --no-edit  # Keeps the existing message
 
 
 
+## resolving conflicts
+
+* go to that branch 
+* take pull from the branch where you want your code to be merged
+
+
+
 
