@@ -7,8 +7,7 @@
 	* Rules for hooks 
 	* customHook 
 
-* In react  when you run timers , make request, add listeners ->  if you do not remove them properly : there could
-be memory leak or unintended issues : You should cleanup 
+* In react  when you run timers , make request, add listeners ->  if you do not remove them properly : there could be memory leak or unintended issues : You should cleanup 
 
  ### UseEffect :
  ### Reference : https://react.dev/reference/react/useEffect
@@ -27,13 +26,24 @@ c.) `with some dependency`  that will run on render and when dependecy re-render
 ### rules of hook 
 * hook are pure js function 
 * hooks start with the use
-* should only be used inside functional Components
-* call hooks on the top level i.e it should outisde any conditional block, loops or any handler function  
+* should only be used inside `functional Components`
+* call hooks on the top level i.e it should outisde any conditional block, loops or any handler function 
+
+**Extra insight**: a hook can only be called inside another hook 
 
 
 ## foundational knowledge 
-* components :  reusable UI
-* custom hook :reusable logic 
+* components : reusable UI
+* custom hook : reusable logic 
+
+
+# React-2 
+* useReducer : useState for complex state mangment
+* useRef : 
+**Perf**
+* useMemo
+* useCallback
+* React.memo
 
 
 
