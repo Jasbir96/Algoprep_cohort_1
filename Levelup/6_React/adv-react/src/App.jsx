@@ -25,13 +25,20 @@ import UseStateCounter from './React_2/UseStateCounter';
 import UseReducerCounter from './React_2/UseReducerCounter';
 import FormMangement from './React_2/FormMangement';
 import UseRefInput from './React_2/UseRefInput';
+import ReactMemo from './React_2/ReactMemo';
+import UseCallback from './React_2/USeCallback';
+import UseMemo from './React_2/UseMemo';
+
 
 function App() {
   return <>
     {/* <UseStateCounter /> */}
     {/* <UseReducerCounter/> */}
     {/* <FormMangement/> */}
-    <UseRefInput/>
+    {/* <UseRefInput/> */}
+    {/* <ReactMemo/> */}
+    {/* <UseCallback /> */}
+    <UseMemo/>
   </>
 }
 
