@@ -8,7 +8,6 @@ const razorpay = new Razorpay({
 
 // create the order so that user can checkout on frontend 
 const getPaymentController = async (req, res) => {
-    console.log("req", req);
     try {
         const data = await razorpay.orders.create({
             amount: req.body.amount * 100,
