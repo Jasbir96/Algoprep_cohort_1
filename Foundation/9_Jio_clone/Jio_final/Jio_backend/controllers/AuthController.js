@@ -78,7 +78,7 @@ async function resetPasswordHandler(req, res) {
         if (!resetDetails.password || !resetDetails.confirmPassword
             || !resetDetails.otp
             || resetDetails.password != resetDetails.confirmPassword) {
-            res.status(401).json({
+           return res.status(401).json({
                 status: "failure",
                 message: "invalid request"
             })
@@ -206,6 +206,7 @@ async function loginHandler(req, res) {
         // // token -> cookies
         res.cookie("jwt", authToken, {
             maxAge: 1000 * 60 * 60 * 24,
+            secure:true,
             httpOnly: true, // it can only be accessed by the server
         })
         // // res send 
@@ -251,11 +252,10 @@ const protectRouteMiddleWare = async function (req, res, next) {
     }
 };
 const logoutController = function (req, res) {
-    res.cookie("JWT", "", {
-        maxAge: Date.now(),
+    res.cookie("jwt", "", {
+        // how much time
+        maxAge:0,
         httpOnly: true,
-        path: "/",
-        sameSite: "None",
         secure: true,
     });
 

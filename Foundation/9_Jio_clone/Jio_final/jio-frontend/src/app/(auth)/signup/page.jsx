@@ -15,7 +15,7 @@ import { useState } from "react";
 import { api, ENDPOINT } from "@/lib/api";
 import { useRouter } from "next/navigation";
 import { LucideLoader2 } from "lucide-react";
-import { useDispatch } from "react-redux";
+import { useDispatch,useSelector } from "react-redux";
 import { userLoggedInDetails } from "@/redux/userSlice";
 import { toast } from "sonner";
 
@@ -27,6 +27,7 @@ export default function LoginForm() {
     const [loading, setLoading] = useState(false);
     const router = useRouter();
     const dispatch = useDispatch();
+    const userData = useSelector((state) => state.user);
     if (userData.isLoggedIn) {
         return router.push("/");
     }

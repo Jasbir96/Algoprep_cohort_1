@@ -70,7 +70,7 @@ userSchema.pre("save", function (next) {
 const validRoles = ["user", "admin", "feed curator", "moderator"];
 
 userSchema.pre("save", function (next) {
-   const isValid= validRoles.find((role)=>{this.role==role});
+   const isValid= validRoles.find((role)=>{return this.role==role});
    if(isValid){
     next();
    }else{

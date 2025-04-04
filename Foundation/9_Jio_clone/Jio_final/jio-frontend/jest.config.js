@@ -5,7 +5,7 @@ module.exports = {
         '^@/(.*)$': '<rootDir>/src/$1',
     },
     transform: {
-        '^.+\\.(js|jsx)$': 'babel-jest',
+        '^.+\\.(js|jsx|ts|tsx)$': ['babel-jest', { configFile: './babel.config.test.js' }],
     },
     testMatch: ['**/*.test.js', '**/*.test.jsx'],
     moduleDirectories: ['node_modules', '<rootDir>'],

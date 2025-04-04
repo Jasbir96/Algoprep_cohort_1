@@ -15,6 +15,8 @@ import { Button } from "@/components/ui/button";
 import { api, ENDPOINT } from "@/lib/api";
 import { LucideLoader2 } from "lucide-react";
 import { toast } from "sonner";
+import { useRouter } from "next/navigation";
+
 
 
 function ResetPassword() {
@@ -25,9 +27,7 @@ function ResetPassword() {
     const [otp, setOtp] = useState("");
     const [newPassword, setNewPassword] = useState("");
     const [confirmNewPassword, setConfirmNewPassword] = useState("");
-
-
-
+    const router=useRouter();
 
 
     const handleForgetPassword = async () => {
@@ -72,7 +72,7 @@ function ResetPassword() {
             const res = await api.patch(ENDPOINT.resetPassword, {
                 email,
                 password: newPassword,
-                confirmPasword: confirmNewPassword,
+                confirmPassword: confirmNewPassword,
                 otp,
             });
 

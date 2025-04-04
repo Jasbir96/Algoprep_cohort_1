@@ -11,7 +11,7 @@ const rateLimiter = require("express-rate-limit");
 
 dotenv.config();
 
-const limiter = rateLimit({
+const limiter = rateLimiter({
     windowMs: 15 * 60 * 1000, // 15 minutes
     limit: 100, // Limit each IP to 100 requests per `window` (here, per 15 minutes).
     standardHeaders: 'draft-8', // draft-6: `RateLimit-*` headers; draft-7 & draft-8: combined `RateLimit` header
@@ -65,7 +65,7 @@ async function startServer() {
     }
 
     // Define ports
-    const PORT = process.env.NODE_ENV === 'test' ? 5000 : 3000;
+    const PORT = process.env.NODE_ENV === 'test' ? 5000 : process.env.PORT;
 
 
 
