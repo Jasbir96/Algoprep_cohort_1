@@ -76,9 +76,7 @@ const getThumbnail = async (req, res) => {
         }
         const thumbnailPath = path.join(__dirname, '..', 'thumbnails', `${videoId}.jpg`);       
         if (!fs.existsSync(thumbnailPath)) {
-            return res.status(404).json({
-                status: "failure"
-            })
+           await generateThumbnailUtil(videoId)
         }
 
         // Send the thumbnail
@@ -89,6 +87,45 @@ const getThumbnail = async (req, res) => {
 
     }
 }
+
+
+const generateThumbnailUtil = async (videoId) => {
+    try {
+        const videoPath = path.join(__dirname, '..', 'videos', `${videoId}.mp4`);
+        const thumbnailPath = path.join(__dirname, '..', 'thumbnails', `${videoId}.jpg`);
+
+        // Ensure the thumbnails directory exists
+        const thumbnailDir = path.dirname(thumbnailPath);
+        if (!fs.existsSync(thumbnailDir)) {
+            fs.mkdirSync(thumbnailDir, { recursive: true });
+        }
+
+        return new Promise((resolve, reject) => {
+            // nodes 
+            const ffmpeg = spawn('ffmpeg', [
+                '-i', videoPath,
+                '-ss', '00:00:01',
+                '-frames:v', '1',
+                thumbnailPath
+            ]);
+
+            ffmpeg.on('close', (code) => {
+                if (code === 0) {
+                    resolve(thumbnailPath);
+                } else {
+                    reject(new Error(`FFmpeg process exited with code ${code}`));
+                }
+            });
+
+            ffmpeg.on('error', (err) => {
+                reject(err);
+            });
+        });
+    } catch (error) {
+        console.error('Error generating thumbnail:', error);
+        throw error;
+    }
+};
 module.exports = {
     getAllVideos,
     getVideoStream,
