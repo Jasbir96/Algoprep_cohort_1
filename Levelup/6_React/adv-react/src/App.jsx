@@ -28,6 +28,8 @@ import UseRefInput from './React_2/UseRefInput';
 import ReactMemo from './React_2/ReactMemo';
 import UseCallback from './React_2/USeCallback';
 import UseMemo from './React_2/UseMemo';
+import FunctionalCounter from "./React_3/functionalCounter"
+import ClassCounter from "./React_3/classCounter"
 
 
 function App() {
@@ -38,7 +40,11 @@ function App() {
     {/* <UseRefInput/> */}
     {/* <ReactMemo/> */}
     {/* <UseCallback /> */}
-    <UseMemo/>
+    {/* <UseMemo/> */}
+    <>
+    <FunctionalCounter/>
+    <ClassCounter/>
+    </>
   </>
 }
 

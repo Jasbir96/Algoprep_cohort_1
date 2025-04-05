@@ -163,17 +163,36 @@ const vdom ={
 * cache a reference  to a function-> `usecallback` to cache a function that can be used to prevent a fn to  be recreated on every re-render
 * cache some solution -> `useMemo` : you can prevent cacluclation / execution of a function if the dependency has not changes
 **Disadvantage of over-using it** : you will be using extra memory to store these cached thing and extra processing willl be required
-
 ## React-3
-Performance improve
-* build level -> code splitting and lazy loading
-* class based component : discuss this part
-* redux and context api (revision) part
+### Agenda
+* redux and context api (revision) part -> `alreay done in foundation`
+* class based component : discuss this part  -> 
+* Performance improve : build level -> code splitting and lazy loading -> `build tools class`
+### class based component 
+**lifecycle methods**: 
+1.  `constructor` : 
+    * usecase : to define the state ,
+    *  execution :  it will run only once in the lifecycle of the component at the time of mount
+2. `render` : 
+    * usecase : it is used to render the component
+    * exceution : first render+ re-render
+3. `componentdidMount`:
+    * usecase : it is used to do some action after the render : fetching data 
+    * execution :  only once after first re-render
+4. `componentDidUpdate`;
+    * usecase ; it used to trun logic on re-render
+    * excution : after every render
+5. `componentwillUnmount`
+    * usecase ; if you want to do any cleanup  when component is removed
+    * execution : after elemnt is unmounted 
+**lifecycle methods parellels**
+* `useEffect(fn,[])` -> componentDidmount
+* `useEffect(fn)` -> componentDidmount+componentDidUpdate
+* `useEffect(()=>{  -> component willUnmount
+return ()=>{
 
-
-
-
-
-
+}
+},[])`
+ 
 
 
