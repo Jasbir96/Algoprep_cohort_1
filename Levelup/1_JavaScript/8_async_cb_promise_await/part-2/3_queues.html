@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 1. Tasks Queu/ cb Queue: cb from any asynchronous callbacke based fn  and event listener -->
+    <!-- 2. UI render : requestAnimationframe-> help you to execute js just before rendering-->
+    <!--3. MicroTask queue : callbacks of promise are are enqued  -->
+
+</head>
+
+<body>
+
+
+    <!-- game build 
+     -> player move
+        // seTimeout -> 1000/30 -> logic -> move
+            30hz 
+            60hz ,
+            144hz ,   
+    -->
+
+    <script>
+        console.log("before");
+        // this function executes you code just before your screen referesh
+        requestAnimationFrame(function () {
+            console.log('B request animation Frame');
+        })
+        // given time
+        setTimeout(() => {
+            console.log("C task queue")
+        }, 0);
+
+        /***fn will go into microtask queue*/
+        queueMicrotask(function () {
+            console.log('D microtask');
+        });
+        console.log("after");
+    </script>
+
+
+<!-- // synchronous code > Microtask > callback / TaskQueue~= RequestanimationFrame -->
+</body>
+
+</html>
